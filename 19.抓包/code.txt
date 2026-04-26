@@ -1,0 +1,17 @@
+optional base 1
+
+dim Temp as string,Bytes() as byte
+redim Bytes(1)
+open "" for input as #1
+open "" for binary as #2
+    do until eof(1)
+	line input #1,Temp
+	do 
+	    if len(trim(Temp)) = 0 then exit do
+	    Bytes(ubound(Bytes)) = cbyte("&H" & left(Temp,2))
+	    redim preserve Bytes(ubound(Bytes) + 1)
+	    Temp = mid(Temp,3)
+	loop
+    loop
+    put #2,1,bytes
+close #1

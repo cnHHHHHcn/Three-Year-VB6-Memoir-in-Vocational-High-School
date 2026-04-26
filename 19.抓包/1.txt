@@ -1,0 +1,8 @@
+Public Declare Function timeGetTime Lib "winmm.dll" Alias "timeGetTime" () As Long
+sub Wait(byval DelayTime as long )
+	DelayTime= DelayTime + timegettime
+	do while timegettime < DelayTime
+		doevents
+	loop
+end sub 
+
