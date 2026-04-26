@@ -1,0 +1,37 @@
+'难度设置 控制区 label14.caption
+Select Case Label14.Caption
+Case 0
+Timer2.Interval = 70
+Case 1
+Timer2.Interval = 60
+Case 2
+Timer2.Interval = 40
+End Select
+
+'难度设置 控制区 label14.caption
+Select Case Label14.Caption
+Case 0
+    If a = 90 Then
+        Timer2.Interval = 50
+    ElseIf a = 45 Then
+        Image5.Visible = True
+    ElseIf a = 30 Then
+        Timer2.Interval = 30
+    End If
+Case 1
+    If a = 90 Then
+        Timer2.Interval = 40
+    ElseIf a = 45 Then
+        Image5.Visible = True
+    ElseIf a = 30 Then
+        Timer2.Interval = 20
+    End If
+Case 2
+    If a = 90 Then
+        Timer2.Interval = 20
+    ElseIf a = 45 Then
+        Image5.Visible = True
+    ElseIf a = 30 Then
+        Timer2.Interval = 5
+    End If
+End Select

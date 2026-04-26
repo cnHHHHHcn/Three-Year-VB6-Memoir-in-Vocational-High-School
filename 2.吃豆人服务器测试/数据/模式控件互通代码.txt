@@ -1,0 +1,197 @@
+﻿form2
+Private Sub Combo1_Change()
+'游戏模式与form3的游戏模式互通，combo2控件同理
+Select Case Combo1.Text
+Case "看脸模式"
+Form3.Combo1.Text = "看脸模式"
+Case "普通模式"
+Form3.Combo1.Text = "普通模式"
+Case "无尽模式"
+Form3.Combo1.Text = "无尽模式"
+Case Else
+Combo1.Text = ""
+End Select
+End Sub
+
+Private Sub Combo1_Click()
+If Combo1.Text = "看脸模式" Then
+Form1.Label13.Caption = 1
+ElseIf Combo1.Text = "普通模式" Then
+Form1.Label13.Caption = 0
+ElseIf Combo1.Text = "无尽模式" Then
+Form1.Label13.Caption = 2
+End If
+Select Case Combo1.Text
+Case "看脸模式"
+Form3.Combo1.Text = "看脸模式"
+Combo2.Enabled = True
+Form3.Combo2.Enabled = True
+Case "普通模式"
+Form3.Combo1.Text = "普通模式"
+Combo2.Enabled = True
+Form3.Combo2.Enabled = True
+Case "无尽模式"
+Form3.Combo1.Text = "无尽模式"
+Combo2.Text = ""
+Combo2.Enabled = False
+Form3.Combo2.Text = ""
+Form3.Combo2.Enabled = False
+Case Else
+Combo1.Text = ""
+End Select
+End Sub
+
+Private Sub Combo2_Change()
+Select Case Combo2.Text
+Case "简单"
+Form3.Combo2.Text = "简单"
+Case "普通"
+Form3.Combo2.Text = "普通"
+Case "困难"
+Form3.Combo2.Text = "困难"
+Case Else
+Combo2.Text = ""
+End Select
+End Sub
+
+Private Sub Combo2_Click()
+If Combo2.Text = "简单" Then
+Form1.Label14.Caption = 0
+ElseIf Combo2.Text = "普通" Then
+Form1.Label14.Caption = 1
+ElseIf Combo2.Text = "困难" Then
+Form1.Label14.Caption = 2
+End If
+Select Case Combo2.Text
+Case "简单"
+Form3.Combo2.Text = "简单"
+Case "普通"
+Form3.Combo2.Text = "普通"
+Case "困难"
+Form3.Combo2.Text = "困难"
+Case Else
+Combo2.Text = ""
+End Select
+End Sub
+
+Private Sub Command1_Click()
+If Combo1.Text = "无尽模式" And Combo2.Text = "" Then
+Form1.Show: Form2.Hide: GoTo gh
+End If
+If Combo1.Text = "" Or Combo2.Text = "" Then
+MsgBox "请输入模式和难度。", 48
+Else
+Form1.Show: Form2.Hide
+End If
+gh:
+End Sub
+
+form3
+Private Sub Combo1_Change()
+'游戏模式与form2的游戏模式互通，combo2控件同理
+Select Case Combo1.Text
+Case "看脸模式"
+Form2.Combo1.Text = "看脸模式"
+Case "普通模式"
+Form2.Combo1.Text = "普通模式"
+Case "无尽模式"
+Form3.Combo1.Text = "无尽模式"
+Case Else
+Combo1.Text = ""
+End Select
+End Sub
+
+Private Sub Combo1_Click()
+If Form2.Label2.Caption = 1 Then
+Else
+Label5.Caption = 1
+End If
+If Combo1.Text = "看脸模式" Then
+Form1.Label13.Caption = 1
+ElseIf Combo1.Text = "普通模式" Then
+Form1.Label13.Caption = 0
+ElseIf Combo1.Text = "无尽模式" Then
+Form1.Label13.Caption = 2
+End If
+Select Case Combo1.Text
+Case "看脸模式"
+Combo2.Enabled = True
+Form2.Combo1.Text = "看脸模式"
+Form2.Combo2.Enabled = True
+Case "普通模式"
+Combo2.Enabled = True
+Form2.Combo1.Text = "普通模式"
+Form2.Combo2.Enabled = True
+Case "无尽模式"
+Form2.Combo1.Text = "无尽模式"
+Combo2.Text = ""
+Combo2.Enabled = False
+Form2.Combo2.Text = ""
+Form2.Combo2.Enabled = False
+Case Else
+Combo1.Text = ""
+End Select
+End Sub
+
+Private Sub Combo2_Change()
+Select Case Combo2.Text
+Case "简单"
+Form2.Combo2.Text = "简单"
+Case "普通"
+Form2.Combo2.Text = "普通"
+Case "困难"
+Form2.Combo2.Text = "困难"
+Case Else
+Combo2.Text = ""
+End Select
+End Sub
+
+Private Sub Combo2_Click()
+If Form2.Label2.Caption = 1 Then
+Else
+Label5.Caption = 1
+End If
+If Combo2.Text = "简单" Then
+Form1.Label14.Caption = 0
+ElseIf Combo2.Text = "普通" Then
+Form1.Label14.Caption = 1
+ElseIf Combo2.Text = "困难" Then
+Form1.Label14.Caption = 2
+End If
+Select Case Combo2.Text
+Case "简单"
+Form2.Combo2.Text = "简单"
+Case "普通"
+Form2.Combo2.Text = "普通"
+Case "困难"
+Form2.Combo2.Text = "困难"
+Case Else
+Combo2.Text = ""
+End Select
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If (Asc(gh(0)) <> 119 Or Asc(gh(0)) <> 87) Or (Asc(gh(1)) <> 115 Or Asc(gh(1)) <> 83) Or (Asc(gh(2)) <> 97 Or Asc(gh(2)) <> 65) Or (Asc(gh(3)) <> 100 Or Asc(gh(3)) <> 69) Then

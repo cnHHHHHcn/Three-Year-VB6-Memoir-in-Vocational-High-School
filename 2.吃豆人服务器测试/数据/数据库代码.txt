@@ -1,0 +1,106 @@
+Dim ai As New ADODB.Connection '声明并创建链接对象
+Dim rs As ADODB.Recordset '声明链接对象类型
+Dim sql$
+
+插入账户
+Private Sub Command3_Click()
+'sql插入语句
+sql = "insert into [用户登录] ([用户名]，[密码]) values（' " & Text1.Text & "  ',' " & Text2.Text & "  ',）"
+      'insert into <表名> ([字段1]，[字段2]，……) values ('字段值1','字段2'，……)
+'创建数据库集对象的链接
+Set rs = New ADODB.Recordset
+rs.Open sql, ai, adOpenKeyset, adLockBatchOptimistic
+End Sub
+
+Private Sub Form_Load()
+ai.ConnectionString = "Provider=Microsoft.jet.OLEDB.4.0;Data Source =" & App.Path & "\吃豆人数据库\吃豆人.mdb;Persist Security Info=false"  '链接数据库的驱动字符
+ai.Open
+End Sub
+
+为账户建表
+Private Sub Command3_LostFocus()
+On Error Resume Next
+Dim ai As New ADODB.Connection
+ai.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source =" & App.Path & "\吃豆人数据库\吃豆人.mdb;Persist Security Info=false"   '链接数据库的驱动字符
+ai.Open
+ghj = "CREATE  TABLE " & Text1.Text & "(模式 text,难度 text,得分 long,游玩时间 long,结果 text,时间 Datetime)"
+ai.Execute ghj
+ai.Close
+Text1 = "": Text2 = ""
+end sub
+
+账户登录
+Private Sub Command5_Click()
+Static kl
+Dim DB As New ADODB.Connection  '链接吃豆人.mdb数据库
+With DB     'mdb格式链接
+    .ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source =" & App.Path & "\吃豆人数据库\吃豆人.mdb;Persist Security Info=false"   '链接数据库的驱动字符
+    .Open
+End With
+Dim DB_rs As New ADODB.Recordset '声明链接对象类型
+Dim DB_sql$
+If Text3.Text <> "" Or Text4.Text <> "" Then
+    If LenB(Text3.Text) = 6 And LenB(Text4.Text) = 12 Then
+        'On Error Resume Next
+        'sql查询语句
+        DB_sql = "select * from [用户登录] where 用户名 = ' " & Trim(Text4.Text) & " 'and 密码 = ' " & Trim(Text3.Text) & " ' "  '查询用户登录表
+                 'select [distinct] [*] from <表名> where <条件>
+        DB_rs.Open DB_sql, DB, adOpenKeyset, adLockBatchOptimistic
+        If DB_rs.EOF = False Then  '查找记录
+            Form5.Hide: Form2.Show
+            MsgBox "账户登陆成功。", 64, "吃豆人登录系统": kl = 0
+            Form2.Label9.Caption = Form2.Label9.Caption + Text4.Text
+            Else
+            kl = kl + 1
+            If kl Mod 3 = 0 Then MsgBox "账户或密码已错三次。请修改用户密码或注册新用户", 64: GoTo er
+            MsgBox "账户或密码有错误，请检查。"
+er:
+        End If
+        DB_rs.Close
+        Set DB_rs = Nothing
+        DB.Close
+        Set DB = Nothing
+    Else
+        MsgBox "用户不能少于6位，密码不能少于3位。", 48
+    End If
+Else
+    MsgBox "用户名和密码不能为空！", 16, "警告"
+End If
+End Sub
+
+账户修改密码
+Private Sub Command8_Click()
+On Error Resume Next
+Dim DB As New ADODB.Connection  '链接吃豆人.mdb数据库
+With DB     'mdb格式链接
+    .ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source =" & App.Path & "\吃豆人数据库\吃豆人.mdb;Persist Security Info=false"   '链接数据库的驱动字符
+    .Open
+End With
+Dim DB_rs As New ADODB.Recordset '声明链接对象类型
+Dim DB_sql$
+If Text6.Text <> "" Or Text7.Text <> "" Then
+    If Text6.Text = Text7.Text Then
+        DB_sql = "update 用户登录 set 密码 = ' " & Text6.Text & " ' where 用户名 = ' " & Text5.Text & " ' "
+                 'update <表名> set <字段值1>=<表达式>,<字段值2>=<表达式>,…… where <条件>
+        DB_rs.Open DB_sql, DB, adOpenKeyset, adLockBatchOptimistic
+        If DB_rs.EOF = False Then '查找记录
+            MsgBox "密码修改成功。"
+            Frame2.Visible = False
+        Else
+            MsgBox "无此用户，密码修改失败。", 16
+        End If
+    Else
+        MsgBox "密码值不符", 16
+    End If
+Else
+MsgBox "密码框值为空", 48
+End If
+
+账户注册
+Set rs = New ADODB.Recordset
+sql = " select * from [用户登录] where 用户名 = '" & Space(1) & Text1.Text & " '"
+rs.Open sql, ai, adOpenKeyset, adLockBatchOptimistic
+If rs.EOF = False Then
+    MsgBox "用户名已占用，请输入新的用户名。"
+    Text1.Text = "": Text1.SetFocus
+End If

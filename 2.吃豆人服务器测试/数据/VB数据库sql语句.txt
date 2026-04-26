@@ -1,0 +1,203 @@
+一、删除表   
+
+drop table 表名称
+
+
+
+二、修改表  
+
+alter  table 表名称   add  列名 数据类型 （add表示添加一列）
+
+alter  table 表名称 drop column 列名称（column表示列   drop表示删除）
+
+
+
+三、删除数据库
+
+drop database 数据库
+
+
+
+图片
+
+四、CRUD操作
+
+
+
+意思分别是：
+
+
+
+create 添加数据  read读取数据 
+
+update 修改数据  delete删除数据
+
+ 
+
+ 1、添加数据(create)
+
+   insert into 表名 values（'001 ','VB '）--加单引号是转为字符串，英文状态；
+
+  insert into 表名values('003',' ')    只添加一列  
+
+  insert into 表名(code,) values('004')  给某一列添加可以用
+
+  insert into 表名(code,name) values('004','数据库')  '给多列添加   
+
+ 
+
+2、删除数据（delete）
+
+   delete from +表名称  --删除表中所有内容
+
+   delete from +表名称 where id=5  (删除此行)-  --where后面跟条件
+
+   
+
+3、修改数据（uodate）
+
+update +表名称 set +列名称=' '      set(设置)---修改所有的内容这一列的
+
+update +表名称 set +列名称='006 ' where id=6
+
+update +表名称 set +列名称='006 ',列名称='002' where id=6-----用逗号隔开可以修改多列
+
+
+
+整数型（int）的不需要加单引号
+
+
+
+图片
+
+
+
+4、查询数据
+
+
+
+1:简单查询
+
+
+
+  select * from  表名称   ——查询表中所有数据     *代表所有列
+
+  select code,name from 表名称——查询指定列数据
+
+  select code,name from 表名称——查指定列的数据
+
+  select code as'代号',name as'姓名' from 表名称——给列指定别名
+
+
+
+2:条件查询
+
+
+
+select * from 表名 where code=' '   查这一行
+
+select * from 表名 where sex='true' and nation=' '   表示并列，--多条件并的关系
+
+select * from 表名 where sex='true' or nation=' ' --多条件或的关系
+
+
+
+3:范围查询
+
+
+
+select * from 表名 where 列名>40 and 列名<50
+
+select * from 表名 where 列名 between 40 and 50  --专用于范围查询
+
+
+
+4:离散查询
+
+
+
+  select * from 表名 where 列名 in (' ',' ',' ')
+
+  select * from 表名 where 列名 not in (' ',' ',' ')  反选，不在里面的
+
+
+
+5:模糊查询
+
+
+
+ select * from 表名 where 列名 like '%宝马%'——查包含宝马的
+
+select * from 表名 where 列名 like '宝马%'——查以宝马开头的
+
+select * from 表名 where 列名 like '%宝马'——查以宝马结尾的
+
+select * from 表名 where 列名 like '宝马'——查等于宝马的
+
+select * from 表名 where 列名 like '--E'——查第三个是E的
+
+% 代表是任意多个字符
+
+- 下划线 代表是一个字符
+
+
+
+6:排序查询
+
+
+
+select * from 表名 order by 列名——默认升序排序
+
+select * from 表名 order by 列名 desc——降序排列
+
+select * from 表名 order by 列名 desc, 列名 asc——多个条件排序   ， 前面是主条件 后面是次要条件
+
+desc 降序  ，asc 升序， order by  排序  根据哪一列排序
+
+
+
+图片
+
+7:分页查询
+
+
+
+select top 5 * from 表名——查询前5条数据
+
+select top 5 * from 表名 where code not in (select top 5 code from car)
+
+
+
+8:去重查询（去掉重复的）
+
+
+
+select distinct 列名 from
+
+
+
+9:分组查询
+
+
+
+select Brand from 表名 group by Brand having count(*)>2
+
+group by    having ——表示根据一列分组 ，count(*)>2——每一组的数量
+
+
+
+10:聚合函数（统计查询）
+
+
+
+select count (*) from 表名——查询所有数据条数（每一列的）
+
+select count (列名主键) from 表名——查询这列的所有数据条数（执行快）
+
+select sum (列名) from 表名——求和
+
+select avg  (列名) from 表名——求平均值
+
+select max (列名) from 表名——求最大值
+
+select min (列名) from 表名——求最小值

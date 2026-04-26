@@ -1,0 +1,22 @@
+
+Private Sub Timer1_Timer()
+'读取公告.txt文件并写入picture控件
+Open "公告.txt " For Input As #1
+Picture1.Cls
+Do While Not EOF(1)
+    Line Input #1, gh
+    a = a & Chr(10) & gh
+Loop
+Close
+Label1.Caption = a
+If Picture1.Height < Label1.Height Then VScroll1.Max = Label1.Height - Picture1.Height Else VScroll1.Enabled = False
+Timer1.Interval = 0
+End Sub
+
+Private Sub VScroll1_Change()
+Label1.Top = -(VScroll1.Value)
+End Sub
+
+Private Sub VScroll1_Scroll()
+Label1.Top = -(VScroll1.Value)
+End Sub

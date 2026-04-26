@@ -1,0 +1,4 @@
+    If Label1.Caption >= 100 Then '记录看脸模式分数到服务器
+Open "\\XSH45\Users\记录\" & Form5.Text1.Text & ".txt" For Output As #1
+Print #1, "时间    "; Now & "  用户名：" & Form5.Text1.Text & "   模式：" & Form2.Combo1 & "  " & Form2.Combo2 & "  通关时间：" & Label4.Caption
+Close
