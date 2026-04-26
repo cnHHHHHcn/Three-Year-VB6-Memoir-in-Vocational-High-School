@@ -1,0 +1,100 @@
+说明
+
+上面列出的许多命令都只有当用户在主机服务器上具有相应的权限时，才能够执行。例如，匿名的 FTP 站点不允许任何人删除文件或目录。
+
+假设域名为“ftp://ftp.microsoft.com”
+
+里面文件如下
+
+1
+|
+|-- 1.txt
+|-- 2.txt
+|-- 2
+|   |
+|   |-- 3.txt
+|   |-- 4.txt
+|-------------
+
+执行按钮代码如下
+Private Sub Command5_Click() '执行
+Inet1.Execute Text1.Text & " " & Combo1.Text & " " & Text3.Text
+End Sub
+
+Text1.Text 为你输入的域名
+Combo1.Text 为ftp命令关键字如下
+Text3.Text 为文件的路径及名称
+
+运算                   描述 
+CD file1               改变目录。改变到 file1 中指定的目录。 
+
+例:ftp://ftp.microsoft.com cd ftp://ftp.microsoft.com\1\
+改变到目录文件夹"1"下
+
+CDUP                   改变到父目录。等效于“CD..”。 
+
+例:ftp://ftp.microsoft.com cdup
+返回原来目录
+
+CLOSE                  关闭当前的 FTP 连接。 
+
+例:ftp://ftp.microsoft.com close
+与ftp://ftp.microsoft.com断开
+
+DELETE file1           删除 file1 中指定的文件。 
+
+例:ftp://ftp.microsoft.com delete ftp://ftp.microsoft.com/1/1.txt
+删除域名目录"1"下的 文件1
+
+DIR file1              目录。搜索 file1 中指定的目录。（允许用通配符，但要使用远程主机的语法。）如果没有指定 file1，将返回当前的整个工作目录。
+
+例:ftp://ftp.microsoft.com dir ftp://ftp.microsoft.com/1
+列出域名目录"1"下的文件及文件夹
+
+GET file1 file2        检索 file1 中指定的远程文件，并创建 file2 中指定的新本地文件。 
+
+例:ftp://ftp.microsoft.com get 3.txt c:\webdownlaod\3.txt
+把域名中文件"3" 下载到本地路径下的"c:\webdownlaod\3.txt"
+
+LS file1               列表。搜索 file1 中指定的目录。（允许用通配符，但要使用远程主机的语法。）。使用 GetChunk 方法返回文件目录数据。 
+
+例:ftp://ftp.microsoft.com ls ftp://ftp.microsoft.com/1/2/4.txt
+查看域名目录"2"下的文件"4"的大小
+
+MKDIR file1            创建目录。创建 file1 中指定的目录。创建是否成功取决于用户在远程主机上的权限。 
+
+例:ftp://ftp.microsoft.com mkdir ftp://ftp.microsoft.com/3/
+创建目录"3"
+
+PUT file1 file2        复制 file1 指定的本地文件到 file2 指定的远程主机上。 
+
+例:ftp://ftp.microsoft.com
+
+PWD                    打印工作目录。返回当前目录名。使用 GetChunk 方法返回数据。 
+
+例:ftp://ftp.microsoft.com
+
+QUIT                   终止当前用户。 
+
+例:ftp://ftp.microsoft.com
+
+RECV file1 file2       检索 file1 中指定的远程文件，并创建 file2 中指定的本地新文件。等效于 GET。 
+
+例:ftp://ftp.microsoft.com
+
+RENAME file1 file2     将 file1 中命名的远程文件重命名为 file2 中指定的新名称。成功与否取决于用户在远程主机上的权限。 
+
+例:ftp://ftp.microsoft.com
+
+RMDIR file1            删除目录。删除 file1 中指定的远程目录。成功与否取决于用户在远程主机上的权限。 
+
+例:ftp://ftp.microsoft.com
+
+SEND file1 file2       复制 file1 指定的本地文件到 file2 指定的远程主机上。等效于 PUT。 
+
+例:ftp://ftp.microsoft.com
+
+SIZE file1             返回 file1 指定的目录的大小。 
+
+例:ftp://ftp.microsoft.com
+

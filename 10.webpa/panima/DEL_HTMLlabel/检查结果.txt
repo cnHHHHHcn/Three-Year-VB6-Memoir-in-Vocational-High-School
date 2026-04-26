@@ -1,0 +1,401 @@
+共计398个标签
+“<”共计398个     “>”共计398个
+
+2     16     15   标签:<!DOCTYPE html>
+19     24     6   标签:<html>
+27     32     6   标签:<head>
+35     87     53   标签:<link rel="dns-prefetch" href="//img.diyifanwen.com">
+90     159     70   标签:<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+162     219     58   标签:<meta http-equiv="Cache-Control" content="no-transform" />
+222     277     56   标签:<meta http-equiv="Cache-Control" content="no-siteapp" />
+280     286     7   标签:<title>
+314     321     8   标签:</title>
+324     478     155   标签:<meta name="description" content="成长需要独立的作文800字 一个人的成长，离不开父母的抚养，社会的哺育，老师的教导。不过，这些都是外在的因素，学会独立才是关键。以成长需要独立为话题写出800字作文。下面第一范文网小编给大家带来成长需要独立的优秀作文，希望对你有帮助。" />
+481     528     48   标签:<meta content="成长需要独立的作文800字" name="keywords" />
+531     641     111   标签:<meta name="mobile-agent" content="format=html5;url=//m.diyifanwen.com/zuowen/chengchangdezuowen/2324392.html">
+644     754     111   标签:<meta name="mobile-agent" content="format=xhtml;url=//m.diyifanwen.com/zuowen/chengchangdezuowen/2324392.html">
+757     865     109   标签:<meta name="mobile-agent" content="format=wml;url=//m.diyifanwen.com/zuowen/chengchangdezuowen/2324392.html">
+868     949     82   标签:<link href="//img.diyifanwen.com/css/common.css" rel="stylesheet" type="text/css">
+952     959     8   标签:<script>
+981     989     9   标签:</script>
+992     1066     75   标签:<script type="text/javascript" src="//img.diyifanwen.com/js/inc/jquery.js">
+1067     1075     9   标签:</script>
+1078     1150     73   标签:<script type="text/javascript" src="//img.diyifanwen.com/js/inc/base.js">
+1151     1159     9   标签:</script>
+1162     1168     7   标签:</head>
+1171     1188     18   标签:<body id="zuowen">
+1191     1221     31   标签:<script type="text/javascript">
+1234     1242     9   标签:</script>
+1245     1275     31   标签:<div  class="header-container">
+1278     1307     30   标签:<div  class="header innerdiv">
+1310     1327     18   标签:<div class="logo">
+1328     1358     31   标签:<a href="//www.diyifanwen.com">
+1359     1443     85   标签:<img src="https://img.diyifanwen.com/siteimages/DyfwLog.gif" alt="第一范文网" border="0"/>
+1444     1447     4   标签:</a>
+1448     1453     6   标签:</div>
+1456     1472     17   标签:<div class="nav">
+1473     1478     6   标签:</div>
+1481     1500     20   标签:<div class="search">
+1501     1530     30   标签:<script language="javascript">
+1543     1551     9   标签:</script>
+1552     1557     6   标签:</div>
+1560     1565     6   标签:</div>
+1568     1573     6   标签:</div>
+1576     1597     22   标签:<div class="innerdiv">
+1598     1619     22   标签:<div class="position">
+1620     1625     6   标签:<span>
+1626     1657     32   标签:<a href="//www.diyifanwen.com/">
+1660     1663     4   标签:</a>
+1666     1704     39   标签:<a href="//www.diyifanwen.com/zuowen/">
+1709     1712     4   标签:</a>
+1715     1767     53   标签:<a href="//www.diyifanwen.com/zuowen/zuowenzhuanti/">
+1772     1775     4   标签:</a>
+1778     1835     58   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/">
+1843     1846     4   标签:</a>
+1862     1868     7   标签:</span>
+1869     1874     6   标签:</div>
+1875     1880     6   标签:</div>
+1883     1905     23   标签:<div  class="innerdiv">
+1909     1926     18   标签:<div class="left">
+1931     1951     21   标签:<div class="article">
+1957     1975     19   标签:<div class="title">
+1976     1979     4   标签:<h1>
+1993     1997     5   标签:</h1>
+1998     2003     6   标签:</div>
+2009     2026     18   标签:<div class="time">
+2027     2045     19   标签:<span class="time">
+2061     2067     7   标签:</span>
+2068     2073     6   标签:</div>
+2079     2109     31   标签:<script type="text/javascript">
+2127     2135     9   标签:</script>
+2142     2162     21   标签:<div class="content">
+2163     2165     3   标签:<p>
+2179     2182     4   标签:</p>
+2183     2185     3   标签:<p>
+2254     2292     39   标签:<a href="//www.diyifanwen.com/zuowen/">
+2295     2298     4   标签:</a>
+2334     2337     4   标签:</p>
+2338     2341     4   标签:<h3>
+2358     2362     5   标签:</h3>
+2363     2365     3   标签:<p>
+2497     2500     4   标签:</p>
+2501     2503     3   标签:<p>
+2600     2603     4   标签:</p>
+2604     2606     3   标签:<p>
+2849     2852     4   标签:</p>
+2853     2855     3   标签:<p>
+3074     3077     4   标签:</p>
+3078     3080     3   标签:<p>
+3258     3261     4   标签:</p>
+3262     3264     3   标签:<p>
+3464     3467     4   标签:</p>
+3468     3470     3   标签:<p>
+3647     3685     39   标签:<a href="//www.diyifanwen.com/sanwen/">
+3688     3691     4   标签:</a>
+3739     3742     4   标签:</p>
+3743     3745     3   标签:<p>
+3757     3799     43   标签:<a href="//www.diyifanwen.com/tool/yanyu/">
+3802     3805     4   标签:</a>
+3916     3919     4   标签:</p>
+3920     3923     4   标签:<h3>
+3940     3944     5   标签:</h3>
+3945     3947     3   标签:<p>
+3973     3976     4   标签:</p>
+3977     3979     3   标签:<p>
+3999     4002     4   标签:</p>
+4003     4005     3   标签:<p>
+4085     4088     4   标签:</p>
+4089     4091     3   标签:<p>
+4207     4210     4   标签:</p>
+4211     4213     3   标签:<p>
+4516     4519     4   标签:</p>
+4520     4522     3   标签:<p>
+4642     4645     4   标签:</p>
+4646     4648     3   标签:<p>
+4678     4681     4   标签:</p>
+4682     4684     3   标签:<p>
+4864     4867     4   标签:</p>
+4868     4870     3   标签:<p>
+4968     4971     4   标签:</p>
+4972     4975     4   标签:<h3>
+4992     4996     5   标签:</h3>
+4997     4999     3   标签:<p>
+5131     5134     4   标签:</p>
+5135     5137     3   标签:<p>
+5234     5237     4   标签:</p>
+5238     5240     3   标签:<p>
+5483     5486     4   标签:</p>
+5487     5489     3   标签:<p>
+5883     5886     4   标签:</p>
+5887     5889     3   标签:<p>
+6312     6315     4   标签:</p>
+6316     6318     3   标签:<p>
+6442     6445     4   标签:</p>
+6446     6449     4   标签:<h3>
+6466     6470     5   标签:</h3>
+6471     6473     3   标签:<p>
+6597     6600     4   标签:</p>
+6601     6603     3   标签:<p>
+6690     6693     4   标签:</p>
+6694     6696     3   标签:<p>
+6788     6791     4   标签:</p>
+6792     6794     3   标签:<p>
+6927     6930     4   标签:</p>
+6931     6933     3   标签:<p>
+7049     7052     4   标签:</p>
+7053     7055     3   标签:<p>
+7180     7183     4   标签:</p>
+7184     7186     3   标签:<p>
+7281     7284     4   标签:</p>
+7285     7287     3   标签:<p>
+7362     7365     4   标签:</p>
+7366     7371     6   标签:</div>
+7378     7408     31   标签:<script type="text/javascript">
+7429     7437     9   标签:</script>
+7438     7466     29   标签:<div class="art-foot-relate">
+7467     7470     4   标签:<ul>
+7471     7484     14   标签:<li class="b">
+7490     7494     5   标签:</li>
+7495     7498     4   标签:<li>
+7499     7608     110   标签:<a href="//www.diyifanwen.com/zuowen/chuzhongzuowen/czynj/2677765.html" title ="成长需要独立作文800字" target="_blank">
+7621     7624     4   标签:</a>
+7625     7629     5   标签:</li>
+7630     7633     4   标签:<li>
+7634     7746     113   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3756537.html" title ="2020年成长需要独立作文600字" target="_blank">
+7764     7767     4   标签:</a>
+7768     7772     5   标签:</li>
+7773     7776     4   标签:<li>
+7777     7882     106   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3754798.html" title ="成长需要独立优秀作文" target="_blank">
+7893     7896     4   标签:</a>
+7897     7901     5   标签:</li>
+7902     7905     4   标签:<li>
+7906     8012     107   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3750302.html" title ="初二作文：成长需要独立" target="_blank">
+8024     8027     4   标签:</a>
+8028     8032     5   标签:</li>
+8033     8036     4   标签:<li>
+8037     8143     107   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3749215.html" title ="初中作文：成长需要独立" target="_blank">
+8155     8158     4   标签:</a>
+8159     8163     5   标签:</li>
+8164     8167     4   标签:<li>
+8168     8275     108   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3747691.html" title ="成长需要独立作文600字" target="_blank">
+8288     8291     4   标签:</a>
+8292     8296     5   标签:</li>
+8297     8300     4   标签:<li>
+8301     8400     100   标签:<a href="//www.diyifanwen.com/w/chengchangdefannaozuowen700zi/" title="成长的烦恼作文700字" target="_blank">
+8412     8415     4   标签:</a>
+8416     8420     5   标签:</li>
+8421     8424     4   标签:<li>
+8425     8523     99   标签:<a href="//www.diyifanwen.com/w/chengchangdegushizuowen300zi/" title="成长的故事作文300字" target="_blank">
+8535     8538     4   标签:</a>
+8539     8543     5   标签:</li>
+8544     8547     4   标签:<li>
+8548     8649     102   标签:<a href="//www.diyifanwen.com/w/chengchangdekuailehefannaozuowen/" title="成长的快乐和烦恼作文" target="_blank">
+8660     8663     4   标签:</a>
+8664     8668     5   标签:</li>
+8669     8673     5   标签:</ul>
+8674     8679     6   标签:</div>
+8686     8716     31   标签:<script type="text/javascript">
+8737     8745     9   标签:</script>
+8750     8755     6   标签:</div>
+8760     8790     31   标签:<script type="text/javascript">
+8809     8817     9   标签:</script>
+8823     8844     22   标签:<div class="left-mod">
+8850     8872     23   标签:<div class="mod-title">
+8873     8878     6   标签:<span>
+8879     8886     8   标签:<strong>
+8900     8908     9   标签:</strong>
+8915     8921     7   标签:</span>
+8922     8927     6   标签:</div>
+8933     8973     41   标签:<div class="mod-content relate-news-sub">
+8980     8983     4   标签:<ul>
+8984     8987     4   标签:<li>
+8988     9097     110   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3744515.html" title ="初二成长需要独立作文800字" target="_blank">
+9112     9115     4   标签:</a>
+9118     9120     3   标签:<p>
+9207     9210     4   标签:</p>
+9211     9215     5   标签:</li>
+9218     9221     4   标签:<li>
+9222     9327     106   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3744191.html" title ="关于成长需要独立作文" target="_blank">
+9338     9341     4   标签:</a>
+9344     9346     3   标签:<p>
+9429     9432     4   标签:</p>
+9433     9437     5   标签:</li>
+9440     9443     4   标签:<li>
+9444     9549     106   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3743375.html" title ="高三成长需要独立作文" target="_blank">
+9560     9563     4   标签:</a>
+9566     9568     3   标签:<p>
+9650     9653     4   标签:</p>
+9654     9658     5   标签:</li>
+9661     9664     4   标签:<li>
+9665     9771     107   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3743346.html" title ="八年级成长需要独立作文" target="_blank">
+9783     9786     4   标签:</a>
+9789     9791     3   标签:<p>
+9871     9874     4   标签:</p>
+9875     9879     5   标签:</li>
+9882     9885     4   标签:<li>
+9886     9991     106   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3741060.html" title ="成长需要独立作文精选" target="_blank">
+10002     10005     4   标签:</a>
+10008     10010     3   标签:<p>
+10123     10126     4   标签:</p>
+10127     10131     5   标签:</li>
+10134     10137     4   标签:<li>
+10138     10242     105   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/3738672.html" title ="成长，需要独立作文" target="_blank">
+10252     10255     4   标签:</a>
+10258     10260     3   标签:<p>
+10379     10382     4   标签:</p>
+10383     10387     5   标签:</li>
+10390     10393     4   标签:<li>
+10394     10504     111   标签:<a href="//www.diyifanwen.com/zuowen/xiaoxuezuowen/xxlnjzw/3198794.html" title ="成长需要独立作文500字" target="_blank">
+10517     10520     4   标签:</a>
+10523     10525     3   标签:<p>
+10628     10631     4   标签:</p>
+10632     10636     5   标签:</li>
+10639     10642     4   标签:<li>
+10643     10752     110   标签:<a href="//www.diyifanwen.com/zuowen/chuzhongzuowen/czynj/2411150.html" title ="成长需要独立 七年级作文" target="_blank">
+10765     10768     4   标签:</a>
+10771     10773     3   标签:<p>
+10889     10892     4   标签:</p>
+10893     10897     5   标签:</li>
+10900     10903     4   标签:<li>
+10904     11004     101   标签:<a href="//www.diyifanwen.com/zuowen/chueryilunwenzuowen/975913.htm" title ="成长需要独立" target="_blank">
+11011     11014     4   标签:</a>
+11017     11019     3   标签:<p>
+11096     11099     4   标签:</p>
+11100     11104     5   标签:</li>
+11107     11110     4   标签:<li>
+11111     11211     101   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/1494383.htm" title ="成长需要独立" target="_blank">
+11218     11221     4   标签:</a>
+11224     11226     3   标签:<p>
+11340     11343     4   标签:</p>
+11344     11348     5   标签:</li>
+11351     11354     4   标签:<li>
+11355     11453     99   标签:<a href="//www.diyifanwen.com/zuowen/chuerhuatizuowen/1000591.htm" title ="成长需要独立" target="_blank">
+11460     11463     4   标签:</a>
+11466     11468     3   标签:<p>
+11580     11583     4   标签:</p>
+11584     11588     5   标签:</li>
+11591     11594     4   标签:<li>
+11595     11703     109   标签:<a href="//www.diyifanwen.com/zuowen/chuerxiejingzuowen/2765996.html" title ="成长需要引路人作文700字" target="_blank">
+11717     11720     4   标签:</a>
+11723     11725     3   标签:<p>
+11839     11842     4   标签:</p>
+11843     11847     5   标签:</li>
+11850     11853     4   标签:<li>
+11854     11945     92   标签:<a href="//www.diyifanwen.com/zuowen/others/4287072.html" title ="成长需要压力作文" target="_blank">
+11954     11957     4   标签:</a>
+11960     11962     3   标签:<p>
+12073     12076     4   标签:</p>
+12077     12081     5   标签:</li>
+12084     12087     4   标签:<li>
+12088     12183     96   标签:<a href="//www.diyifanwen.com/zuowen/others/4285391.html" title ="成长需要磨练作文800字" target="_blank">
+12196     12199     4   标签:</a>
+12202     12204     3   标签:<p>
+12275     12278     4   标签:</p>
+12279     12283     5   标签:</li>
+12286     12289     4   标签:<li>
+12290     12387     98   标签:<a href="//www.diyifanwen.com/zuowen/others/4283533.html" title ="关于成长需要驻足回望的小作文" target="_blank">
+12402     12405     4   标签:</a>
+12408     12410     3   标签:<p>
+12525     12528     4   标签:</p>
+12529     12533     5   标签:</li>
+12536     12573     38   标签:<li class="view-more" target="_blank">
+12574     12631     58   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/">
+12639     12642     4   标签:</a>
+12643     12647     5   标签:</li>
+12648     12652     5   标签:</ul>
+12659     12677     19   标签:<div class="clear">
+12678     12683     6   标签:</div>
+12689     12694     6   标签:</div>
+12699     12704     6   标签:</div>
+12709     12739     31   标签:<script type="text/javascript">
+12761     12769     9   标签:</script>
+12773     12778     6   标签:</div>
+12782     12802     21   标签:<div class="sidebar">
+12806     12836     31   标签:<script type="text/javascript">
+12852     12860     9   标签:</script>
+12865     12887     23   标签:<div class="right-mod">
+12893     12925     33   标签:<div class="mod-title hot-title">
+12930     12935     6   标签:</div>
+12941     12965     25   标签:<div class="mod-content">
+12971     12974     4   标签:<ul>
+12975     12978     4   标签:<li>
+12979     13071     93   标签:<a href="//www.diyifanwen.com/zuowen/others/4273654.html" title ="成长需要自由-作文" target="_blank">
+13081     13084     4   标签:</a>
+13085     13089     5   标签:</li>
+13090     13093     4   标签:<li>
+13094     13190     97   标签:<a href="//www.diyifanwen.com/zuowen/others/4264528.html" title ="我们的成长需要压力优秀作文" target="_blank">
+13204     13207     4   标签:</a>
+13208     13212     5   标签:</li>
+13213     13216     4   标签:<li>
+13217     13310     94   标签:<a href="//www.diyifanwen.com/zuowen/others/4257551.html" title ="《成长需要失败》作文" target="_blank">
+13321     13324     4   标签:</a>
+13325     13329     5   标签:</li>
+13330     13333     4   标签:<li>
+13334     13434     101   标签:<a href="//www.diyifanwen.com/zuowen/chuyishige/3536345.html" title ="初一散文诗歌:成长需要风雨" target="_blank">
+13448     13451     4   标签:</a>
+13452     13456     5   标签:</li>
+13457     13460     4   标签:<li>
+13461     13554     94   标签:<a href="//www.diyifanwen.com/zuowen/others/4254823.html" title ="成长需要空间优秀作文" target="_blank">
+13565     13568     4   标签:</a>
+13569     13573     5   标签:</li>
+13574     13577     4   标签:<li>
+13578     13673     96   标签:<a href="//www.diyifanwen.com/zuowen/others/4253275.html" title ="成长需要磨炼作文600字" target="_blank">
+13686     13689     4   标签:</a>
+13690     13694     5   标签:</li>
+13695     13698     4   标签:<li>
+13699     13792     94   标签:<a href="//www.diyifanwen.com/zuowen/others/4247894.html" title ="成长需要责任作文精选" target="_blank">
+13803     13806     4   标签:</a>
+13807     13811     5   标签:</li>
+13812     13815     4   标签:<li>
+13816     13907     92   标签:<a href="//www.diyifanwen.com/zuowen/others/4247632.html" title ="成长需要鞭策作文" target="_blank">
+13916     13919     4   标签:</a>
+13920     13924     5   标签:</li>
+13925     13928     4   标签:<li>
+13929     14037     109   标签:<a href="//www.diyifanwen.com/zuowen/xiaoxuezuowen/xxwnj/3111195.html" title ="成长需要批评作文450字" target="_blank">
+14050     14053     4   标签:</a>
+14054     14058     5   标签:</li>
+14059     14062     4   标签:<li>
+14063     14171     109   标签:<a href="//www.diyifanwen.com/zuowen/xiaoxuezuowen/xxwnj/3111178.html" title ="成长需要批评作文500字" target="_blank">
+14184     14187     4   标签:</a>
+14188     14192     5   标签:</li>
+14193     14196     4   标签:<li>
+14197     14305     109   标签:<a href="//www.diyifanwen.com/zuowen/xiaoxuezuowen/xxwnj/3111177.html" title ="成长需要批评作文450字" target="_blank">
+14318     14321     4   标签:</a>
+14322     14326     5   标签:</li>
+14327     14330     4   标签:<li>
+14331     14442     112   标签:<a href="//www.diyifanwen.com/zuowen/chusanxiejingzuowen/2821639.html" title ="成长需要风雨的洗礼作文700字" target="_blank">
+14458     14461     4   标签:</a>
+14462     14466     5   标签:</li>
+14467     14470     4   标签:<li>
+14471     14569     99   标签:<a href="//www.diyifanwen.com/zuowen/zixinzuowen/4423641.html" title ="成长需要自信初一作文" target="_blank">
+14580     14583     4   标签:</a>
+14584     14588     5   标签:</li>
+14589     14592     4   标签:<li>
+14593     14703     111   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/2324556.html" title ="关于成长的高中作文范文精选4篇" target="_blank">
+14719     14722     4   标签:</a>
+14723     14727     5   标签:</li>
+14728     14731     4   标签:<li>
+14732     14834     103   标签:<a href="//www.diyifanwen.com/zuowen/chengchangdezuowen/2153488.html" title ="我感恩，我成长" target="_blank">
+14842     14845     4   标签:</a>
+14846     14850     5   标签:</li>
+14851     14855     5   标签:</ul>
+14861     14866     6   标签:</div>
+14871     14876     6   标签:</div>
+14881     14911     31   标签:<script type="text/javascript">
+14927     14935     9   标签:</script>
+14940     14970     31   标签:<script type="text/javascript">
+14989     14997     9   标签:</script>
+15001     15006     6   标签:</div>
+15010     15028     19   标签:<div class="clear">
+15029     15034     6   标签:</div>
+15037     15042     6   标签:</div>
+15045     15064     20   标签:<div class="footer">
+15065     15086     22   标签:<div class="innerdiv">
+15087     15163     77   标签:<script language="javascript" src="//img.diyifanwen.com/js/inc/bottom.js?13">
+15164     15172     9   标签:</script>
+15173     15177     5   标签:<div>
+15178     15183     6   标签:</div>
+15186     15191     6   标签:</div>
+15194     15199     6   标签:</div>
+15202     15208     7   标签:</body>
+15211     15217     7   标签:</html>
