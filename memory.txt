@@ -1,0 +1,75 @@
+Public Declare Function ReadProcessMemory Lib "kernel32" Alias "ReadProcessMemory" (ByVal hProcess As Long, lpBaseAddress As Any, lpBuffer As Any, ByVal nSize As Long, lpNumberOfBytesWritten As Long) As Long
+
+Public Declare Function WriteProcessMemory Lib "kernel32" Alias "WriteProcessMemory" (ByVal hProcess As Long, lpBaseAddress As Any, lpBuffer As Any, ByVal nSize As Long, lpNumberOfBytesWritten As Long) As Long
+
+Public Declare Function OpenProcess Lib "kernel32" Alias "OpenProcess" (ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, ByVal dwProcessId As Long) As Long
+
+Public Declare Function OpenProcessToken Lib "advapi32.dll" (ByVal ProcessHandle As Long, ByVal DesiredAccess As Long, TokenHandle As Long) As Long
+
+Public Declare Function OpenThreadToken Lib "advapi32.dll" Alias "OpenThreadToken" (ByVal ThreadHandle As Long, ByVal DesiredAccess As Long, ByVal OpenAsSelf As Long, TokenHandle As Long) As Long
+
+Public Declare Function CreateThread Lib "kernel32" Alias "CreateThread" (lpThreadAttributes As SECURITY_ATTRIBUTES, ByVal dwStackSize As Long, lpStartAddress As Long, lpParameter As Any, ByVal dwCreationFlags As Long, lpThreadId As Long) As Long
+
+Public Declare Function CreateProcess Lib "kernel32" Alias "CreateProcessA" (ByVal lpApplicationName As String, ByVal lpCommandLine As String, lpProcessAttributes As SECURITY_ATTRIBUTES, lpThreadAttributes As SECURITY_ATTRIBUTES, ByVal bInheritHandles As Long, ByVal dwCreationFlags As Long, lpEnvironment As Any, ByVal lpCurrentDriectory As String, lpStartupInfo As STARTUPINFO, lpProcessInformation As PROCESS_INFORMATION) As Long
+
+Public Type SECURITY_ATTRIBUTES
+        nLength As Long
+        lpSecurityDescriptor As Long
+        bInheritHandle As Long 
+End Type
+Public Type STARTUPINFO
+        cb As Long
+        lpReserved As String
+        lpDesktop As String
+        lpTitle As String
+        dwX As Long
+        dwY As Long
+        dwXSize As Long
+        dwYSize As Long
+        dwXCountChars As Long
+        dwYCountChars As Long
+        dwFillAttribute As Long
+        dwFlags As Long
+        wShowWindow As Integer
+        cbReserved2 As Integer
+        lpReserved2 As Long
+        hStdInput As Long
+        hStdOutput As Long
+        hStdError As Long
+End Type
+Public Type PROCESS_INFORMATION
+        hProcess As Long
+        hThread As Long
+        dwProcessId As Long
+        dwThreadId As Long
+End Type
+
+Public Const PROCESS_HEAP_ENTRY_BUSY = &H4
+Public Const PROCESS_HEAP_ENTRY_DDESHARE = &H20
+Public Const PROCESS_HEAP_ENTRY_MOVEABLE = &H10
+Public Const PROCESS_HEAP_REGION = &H1
+Public Const PROCESS_HEAP_UNCOMMITTED_RANGE = &H2
+Public Const PROCESSOR_ALPHA_21064 = 21064
+Public Const PROCESSOR_ARCHITECTURE_ALPHA = 2
+Public Const PROCESSOR_ARCHITECTURE_INTEL = 0
+Public Const PROCESSOR_ARCHITECTURE_MIPS = 1
+Public Const PROCESSOR_ARCHITECTURE_PPC = 3
+Public Const PROCESSOR_ARCHITECTURE_UNKNOWN = &hFFFF
+Public Const PROCESSOR_INTEL_386 = 386
+Public Const PROCESSOR_INTEL_486 = 486
+Public Const PROCESSOR_INTEL_PENTIUM = 586
+Public Const PROCESSOR_MIPS_R4000 = 4000
+
+Public Const THREAD_BASE_PRIORITY_IDLE = -15
+Public Const THREAD_BASE_PRIORITY_LOWRT = 15
+Public Const THREAD_BASE_PRIORITY_MAX = 2
+Public Const THREAD_BASE_PRIORITY_MIN = -2
+Public Const THREAD_PRIORITY_ABOVE_NORMAL = (THREAD_PRIORITY_HIGHEST - 1)
+Public Const THREAD_PRIORITY_BELOW_NORMAL = (THREAD_PRIORITY_LOWEST + 1)
+Public Const THREAD_PRIORITY_ERROR_RETURN = (MAXLONG)
+Public Const THREAD_PRIORITY_HIGHEST = THREAD_BASE_PRIORITY_MAX
+Public Const THREAD_PRIORITY_IDLE = THREAD_BASE_PRIORITY_IDLE
+Public Const THREAD_PRIORITY_LOWEST = THREAD_BASE_PRIORITY_MIN
+Public Const THREAD_PRIORITY_NORMAL = 0
+Public Const THREAD_PRIORITY_TIME_CRITICAL = THREAD_BASE_PRIORITY_LOWRT
+
