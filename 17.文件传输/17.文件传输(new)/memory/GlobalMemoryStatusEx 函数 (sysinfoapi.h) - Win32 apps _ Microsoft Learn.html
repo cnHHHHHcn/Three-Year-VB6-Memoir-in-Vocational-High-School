@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="zh-cn" dir="ltr" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" style="--window-inner-height:504px !important; --atlas-header-height:0px !important; --atlas-footer-height:0px !important; --atlas-header-visible-height:0px !important; --atlas-footer-visible-height:0px !important;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="GlobalMemoryStatusEx 函数 (sysinfoapi.h)  - Win32 apps">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex"><meta property="og:description" content="检索有关系统当前物理内存和虚拟内存使用情况的信息。  (GlobalMemoryStatusEx) "><meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png">
+
+	<meta property="og:image:alt" content="Microsoft Learn">
+
+	<meta name="twitter:card" content="summary_large_image">
+
+	<meta name="twitter:site" content="@MicrosoftLearn">
+
+	<meta name="color-scheme" content="light dark"><meta name="adobe-target" content="true">
+<meta name="APILocation" content="Kernel32.dll">
+<meta name="APILocation" content="API-MS-Win-Core-SysInfo-l1-1-0.dll">
+<meta name="APILocation" content="KernelBase.dll">
+<meta name="APILocation" content="API-MS-Win-Core-SysInfo-l1-2-0.dll">
+<meta name="APILocation" content="API-MS-Win-Core-SysInfo-l1-2-1.dll">
+<meta name="APILocation" content="API-MS-Win-Core-SysInfo-l1-2-2.dll">
+<meta name="APILocation" content="API-MS-Win-DownLevel-Kernel32-l1-1-0.dll">
+<meta name="APILocation" content="MinKernelBase.dll">
+<meta name="APILocation" content="API-MS-Win-Core-SysInfo-l1-2-3.dll">
+<meta name="APIName" content="GlobalMemoryStatusEx">
+<meta name="APIType" content="DllExport">
+<meta name="author" content="karl-bridge-microsoft">
+<meta name="breadcrumb_path" content="/windows/desktop/api/breadcrumb/toc.json">
+<meta name="depot_name" content="MSDN.sdk-api-build">
+<meta name="description" content="检索有关系统当前物理内存和虚拟内存使用情况的信息。  (GlobalMemoryStatusEx) ">
+<meta name="document_id" content="599dd688-158d-ab6b-0f18-5ae81abdf70f">
+<meta name="document_version_independent_id" content="7b6de689-46cc-6476-7f77-aaebf845f76d">
+<meta name="feedback_help_link_type" content="get-help-at-qna">
+<meta name="feedback_help_link_url" content="https://learn.microsoft.com/answers/tags/224/windows-api-win32/">
+<meta name="feedback_product_url" content="https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb">
+<meta name="feedback_system" content="Standard">
+<meta name="git_commit_id" content="9267262487657894a8af112d7165006fed5035a7">
+<meta name="gitcommit" content="https://cpubwin.visualstudio.com/DefaultCollection/win32/_git/sdk-api-build/commit/9267262487657894a8af112d7165006fed5035a7?path=/sdk-api-src/content/sysinfoapi/nf-sysinfoapi-globalmemorystatusex.md&amp;_a=contents">
+<meta name="loc_file_id" content="AzureDevops-386e9789-0593-45bf-8a24-ffa169c22057.live.MSDN.sdk-api-build.sysinfoapi/nf-sysinfoapi-globalmemorystatusex.md">
+<meta name="loc_source_id" content="AzureDevops-386e9789-0593-45bf-8a24-ffa169c22057#live">
+<meta name="loc_version" content="2024-02-22T20:15:50.5584273Z">
+<meta name="locale" content="zh-cn">
+<meta name="ms.assetid" content="bdcee13f-85be-4b9d-b108-3c5ea616dfbb">
+<meta name="ms.author" content="kbridge">
+<meta name="ms.contentlocale" content="zh-cn">
+<meta name="ms.custom" content="19H1">
+<meta name="ms.date" content="12/05/2018">
+<meta name="ms.keywords" content="GlobalMemoryStatusEx, GlobalMemoryStatusEx function, _win32_globalmemorystatusex, base.globalmemorystatusex, sysinfoapi/GlobalMemoryStatusEx">
+<meta name="ms.service" content="windows-api-desktop-tech">
+<meta name="ms.subservice" content="sdk-api-reference">
+<meta name="ms.topic" content="language-reference">
+<meta name="ms.translationtype" content="MT">
+<meta name="old-location" content="base\globalmemorystatusex.htm">
+<meta name="original_content_git_url" content="https://cpubwin.visualstudio.com/DefaultCollection/win32/_git/sdk-api-build?path=/sdk-api-src/content/sysinfoapi/nf-sysinfoapi-globalmemorystatusex.md&amp;version=GBlive&amp;_a=contents">
+<meta name="page_type" content="conceptual">
+<meta name="req.dll" content="Kernel32.dll">
+<meta name="req.header" content="sysinfoapi.h">
+<meta name="req.include-header" content="Windows.h">
+<meta name="req.lib" content="Kernel32.lib">
+<meta name="req.target-min-winverclnt" content="Windows XP [desktop apps \| UWP apps]">
+<meta name="req.target-min-winversvr" content="Windows Server 2003 [desktop apps \| UWP apps]">
+<meta name="req.target-type" content="Windows">
+<meta name="schema" content="Conceptual">
+<meta name="search.mshattr.devlang" content="c++">
+<meta name="site_name" content="Docs">
+<meta name="targetos" content="Windows">
+<meta name="tech.root" content="base">
+<meta name="toc_rel" content="../_base/toc.json">
+<meta name="TopicType" content="APIRef">
+<meta name="TopicType" content="kbSyntax">
+<meta name="uhfHeaderId" content="MSDocsHeader-WinDevCenter">
+<meta name="UID" content="NF:sysinfoapi.GlobalMemoryStatusEx">
+<meta name="updated_at" content="2024-03-02 05:33 AM">
+<meta name="word_count" content="554">
+<meta name="persistent_id" content="97bf5d2a-6276-e47c-f577-30065881e274">
+	
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/540ac133-a371-4dbb-8f94-28d6cc77a70b" data-source="generated">
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/caec7b7f-4941-4578-b79f-c63b1c1f5af4" data-source="generated">
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8" data-source="generated">
+	
+	<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/60bfc045-f127-4841-9d00-ea35495a5800" data-source="generated">
+	<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/754dea88-f800-4835-b6b5-280cb5d81e88" data-source="generated">
+	<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8" data-source="generated">
+	<meta name="scope" content="Windows, Desktop"><meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/sdk-api/blob/docs/sdk-api-src/content/sysinfoapi/nf-sysinfoapi-globalmemorystatusex.md"><link href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex" rel="canonical"><title>GlobalMemoryStatusEx 函数 (sysinfoapi.h)  - Win32 apps | Microsoft Learn</title><link rel="stylesheet" href="./GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps _ Microsoft Learn_files/site-ltr.css">
+
+	<script id="msdocs-script">
+	var msDocs = {environment: {
+			supportLevel: 'production',
+			accessLevel: 'online',
+			reviewFeatures: false,
+			systemContent: true,
+			azurePortalHostname: 'portal.azure.com',
+			legacyHosting: false,
+			siteName: 'learn',
+		},data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'zh-cn',
+			contentDir: 'ltr',
+			userLocale: 'zh-cn',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {},
+			hasBinaryRating: true,
+			feedbackHelpLinkType:'get-help-at-qna',
+			feedbackHelpLinkUrl:'https://learn.microsoft.com/answers/tags/224/windows-api-win32/',
+			standardFeedback: true,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'Standard',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: 'https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb',extendBreadcrumb: true,isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			isPermissioned: false,
+			isPrivateUnauthorized: false,hasRecommendations: true,},
+		functions:{}
+	};
+	</script><script src="./GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps _ Microsoft Learn_files/wcp-consent.js.下载"></script>
+	<script src="./GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps _ Microsoft Learn_files/ms.jsll-4.min.js.下载"></script><script src="./GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps _ Microsoft Learn_files/deprecation.js.下载"></script><link rel="preconnect" href="https://mscom.demdex.net/" crossorigin="">
+		<link rel="dns-prefetch" href="https://target.microsoft.com/">
+		<link rel="dns-prefetch" href="https://microsoftmscompoc.tt.omtrdc.net/">
+		<link rel="preload" as="script" href="https://learn.microsoft.com/static/third-party/adobe-target/at-js/2.9.0/at.js" integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu" crossorigin="anonymous" id="adobe-target-script" type="application/javascript"><script src="./GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps _ Microsoft Learn_files/index-docs.js.下载"></script><style></style><style id="ms-consent-banner-main-styles">.w8hcgFksdo30C8w-bygqu{color:#000}.ydkKdaztSS0AeHWIeIHsQ a{color:#0067B8}.erL690_8JwUW-R4bJRcfl{background-color:#EBEBEB;border:none;color:#000}.erL690_8JwUW-R4bJRcfl:enabled:hover{color:#000;background-color:#DBDBDB;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:none}.erL690_8JwUW-R4bJRcfl:enabled:focus{background-color:#DBDBDB;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:2px solid #000}.erL690_8JwUW-R4bJRcfl:disabled{opacity:1;color:rgba(0,0,0,0.2);background-color:rgba(0,0,0,0.2);border:none}._1zNQOqxpBFSokeCLGi_hGr{border:none;background-color:#0067B8;color:#fff}._1zNQOqxpBFSokeCLGi_hGr:enabled:hover{color:#fff;background-color:#0067B8;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:none}._1zNQOqxpBFSokeCLGi_hGr:enabled:focus{background-color:#0067B8;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:2px solid #000}._1zNQOqxpBFSokeCLGi_hGr:disabled{opacity:1;color:rgba(0,0,0,0.2);background-color:rgba(0,120,215,0.2);border:none}._23tra1HsiiP6cT-Cka-ycB{position:relative;display:flex;z-index:9999;width:100%;background-color:#F2F2F2;justify-content:space-between;text-align:left}div[dir="rtl"]._23tra1HsiiP6cT-Cka-ycB{text-align:right}._1Upc2NjY8AlDn177YoVj0y{margin:0;padding-left:5%;padding-top:8px;padding-bottom:8px}div[dir="rtl"] ._1Upc2NjY8AlDn177YoVj0y{margin:0;padding:8px 5% 8px 0;float:none}._23tra1HsiiP6cT-Cka-ycB svg{fill:none;max-width:none;max-height:none}._1V_hlU-7jdtPiooHMu89BB{display:table-cell;padding:12px;width:24px;height:24px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:24px;line-height:0}.f6QKJD7fhSbnJLarTL-W-{display:table-cell;vertical-align:middle;padding:0;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:13px;line-height:16px}.f6QKJD7fhSbnJLarTL-W- a{text-decoration:underline}._2j0fmugLb1FgYz6KPuB91w{display:inline-block;margin-left:5%;margin-right:5%;min-width:40%;min-width:calc((150px + 3 * 4px) * 2 + 150px);min-width:-webkit-fit-content;min-width:-moz-fit-content;min-width:fit-content;align-self:center;position:relative}._1XuCi2WhiqeWRUVp3pnFG3{margin:4px;padding:5px;min-width:150px;min-height:36px;vertical-align:top;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._1XuCi2WhiqeWRUVp3pnFG3:focus{box-sizing:border-box}._1XuCi2WhiqeWRUVp3pnFG3:disabled{cursor:not-allowed}._2bvsb3ubApyZ0UGoQA9O9T{display:block;position:fixed;z-index:10000;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,0.6);overflow:auto;text-align:left}div[dir="rtl"]._2bvsb3ubApyZ0UGoQA9O9T{text-align:right}div[dir="rtl"] ._2bvsb3ubApyZ0UGoQA9O9T{left:auto;right:0}.AFsJE948muYyzCMktdzuk{position:relative;top:8%;margin-bottom:40px;margin-left:auto;margin-right:auto;box-sizing:border-box;width:640px;background-color:#fff;border:1px solid #0067B8}._3kWyBRbW_dgnMiEyx06Fu4{float:right;z-index:1;margin:2px;padding:12px;border:none;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:13px;line-height:13px;display:flex;align-items:center;text-align:center;color:#666;background-color:#fff}div[dir="rtl"] ._3kWyBRbW_dgnMiEyx06Fu4{margin:2px;padding:12px;float:left}.uCYvKvHXrhjNgflv1VqdD{position:static;margin-top:36px;margin-left:36px;margin-right:36px}._17pX1m9O_W--iZbDt3Ta5r{margin-top:0;margin-bottom:12px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:20px;line-height:24px;text-transform:none}._1kBkHQ1V1wu3kl-YcLgUr6{height:446px;overflow:auto}._20_nXDf6uFs9Q6wxRXG-I-{margin-top:0;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px}._20_nXDf6uFs9Q6wxRXG-I- a{text-decoration:underline}dl._2a0NH_GDQEQe5Ynfo7suVH{margin-top:36px;margin-bottom:0;padding:0;list-style:none;text-transform:none}dt._3j_LCPv7fyXv3A8FIXVwZ4{margin-top:20px;float:none;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:18px;line-height:24px;list-style:none}.k-vxTGFbdq1aOZB2HHpjh{margin:0;padding:0;border:none}._2Bucyy75c_ogoU1g-liB5R{margin:0;padding:0;border-bottom:none;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:18px;line-height:24px;text-transform:none}._63gwfzV8dclrsl2cfd90r{display:inline-block;margin-top:0;margin-bottom:13px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px}._1l8wM_4mRYGz3Iu7l3BZR7{display:block}._2UE03QS02aZGkslegN_F-i{display:inline-block;position:relative;left:5px;margin-bottom:13px;margin-right:34px;padding:3px}div[dir="rtl"] ._2UE03QS02aZGkslegN_F-i{margin:0 0 13px 34px;padding:3px;float:none}div[dir="rtl"] ._2UE03QS02aZGkslegN_F-i{left:auto;right:5px}._23tra1HsiiP6cT-Cka-ycB *::before,._2bvsb3ubApyZ0UGoQA9O9T *::before,._23tra1HsiiP6cT-Cka-ycB *::after,._2bvsb3ubApyZ0UGoQA9O9T *::after{box-sizing:inherit}._1HSFn0HzGo6w4ADApV8-c4{outline:2px solid rgba(0,0,0,0.8)}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2{display:inline-block;position:relative;margin-top:0;margin-left:0;margin-right:0;height:0;width:0;border-radius:0;cursor:pointer;outline:none;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2+label::before{display:block;position:absolute;top:5px;left:3px;height:19px;width:19px;content:"";border-radius:50%;border:1px solid #000;background-color:#fff}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2+label::before{left:auto;right:3px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::before{border:1px solid #0067B8}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:rgba(0,0,0,0.8)}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::before{border:1px solid #0067B8}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:#000}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked+label::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:#000}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked+label::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled+label{cursor:not-allowed}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled+label::before{border:1px solid rgba(0,0,0,0.2);background-color:rgba(0,0,0,0.2)}._3RJzeL3l9Rl_lAQEm6VwdX{display:block;position:static;float:right;margin-top:0;margin-bottom:0;margin-left:19px;margin-right:0;padding-top:0;padding-bottom:0;padding-left:8px;padding-right:0;width:80%;width:calc(100% - 19px);font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-transform:none;cursor:pointer;box-sizing:border-box}div[dir="rtl"] ._3RJzeL3l9Rl_lAQEm6VwdX{margin:0 19px 0 0;padding:0 8px 0 0;float:left}.nohp3sIG12ZBhzcMnPala{margin-top:20px;margin-bottom:48px}._2uhaEsmeotZ3P-M0AXo2kF{padding:0;width:278px;height:36px;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._2uhaEsmeotZ3P-M0AXo2kF:focus{box-sizing:border-box}._2uhaEsmeotZ3P-M0AXo2kF:disabled{cursor:not-allowed}._3tOu1FJ59c_xz_PmI1lKV5{float:right;padding:0;width:278px;height:36px;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._3tOu1FJ59c_xz_PmI1lKV5:focus{box-sizing:border-box}._3tOu1FJ59c_xz_PmI1lKV5:disabled{cursor:not-allowed}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0;padding:0;float:left}@media only screen and (max-width: 768px){._2j0fmugLb1FgYz6KPuB91w,._1Upc2NjY8AlDn177YoVj0y{padding-top:8px;padding-bottom:12px;padding-left:3.75%;padding-right:3.75%;margin:0;width:92.5%}._23tra1HsiiP6cT-Cka-ycB{display:block}._1XuCi2WhiqeWRUVp3pnFG3{margin-bottom:8px;margin-left:0;margin-right:0;width:100%}._2bvsb3ubApyZ0UGoQA9O9T{overflow:hidden}.AFsJE948muYyzCMktdzuk{top:1.8%;width:93.33%;height:96.4%;overflow:hidden}.uCYvKvHXrhjNgflv1VqdD{margin-top:24px;margin-left:24px;margin-right:24px;height:100%}._1kBkHQ1V1wu3kl-YcLgUr6{height:62%;height:calc(100% - 188px);min-height:50%}._2uhaEsmeotZ3P-M0AXo2kF{width:100%}._3tOu1FJ59c_xz_PmI1lKV5{margin-bottom:12px;margin-left:0;width:100%}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0 0 12px 0;padding:0;float:none}}@media only screen and (max-width: 768px) and (orientation: landscape), only screen and (max-height: 260px), only screen and (max-width: 340px){.AFsJE948muYyzCMktdzuk{overflow:auto}}@media only screen and (max-height: 260px), only screen and (max-width: 340px){._1XuCi2WhiqeWRUVp3pnFG3{min-width:0}._3kWyBRbW_dgnMiEyx06Fu4{padding:3%}.uCYvKvHXrhjNgflv1VqdD{margin-top:3%;margin-left:3%;margin-right:3%}._17pX1m9O_W--iZbDt3Ta5r{margin-bottom:3%}._1kBkHQ1V1wu3kl-YcLgUr6{height:calc(79% - 64px)}.nohp3sIG12ZBhzcMnPala{margin-top:5%;margin-bottom:10%}._3tOu1FJ59c_xz_PmI1lKV5{margin-bottom:3%}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0 0 3% 0;padding:0;float:none}}
+</style><style type="text/css" id="ms-consent-banner-theme-styles">._23tra1HsiiP6cT-Cka-ycB {
+            background-color: #F2F2F2 !important;
+        }.w8hcgFksdo30C8w-bygqu {
+            color: #000000 !important;
+        }.ydkKdaztSS0AeHWIeIHsQ a {
+            color: #0067B8 !important;
+        }._2bvsb3ubApyZ0UGoQA9O9T {
+            background-color: rgba(255, 255, 255, 0.6) !important;
+        }.AFsJE948muYyzCMktdzuk {
+            background-color: #FFFFFF !important;
+            border: 1px solid #0067B8 !important;
+        }._3kWyBRbW_dgnMiEyx06Fu4 {
+            color: #666666 !important;
+            background-color: #FFFFFF !important;
+        }._1zNQOqxpBFSokeCLGi_hGr {
+            border: none !important;
+            background-color: #0067B8 !important;
+            color: #FFFFFF !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:enabled:hover {
+            color: #FFFFFF !important;
+            background-color: #0067B8 !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: none !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:enabled:focus {
+            background-color: #0067B8 !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: 2px solid #000000 !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:disabled {
+            opacity: 1 !important;
+            color: rgba(0, 0, 0, 0.2) !important;
+            background-color: rgba(0, 120, 215, 0.2) !important;
+            border: none !important;
+        }.erL690_8JwUW-R4bJRcfl {
+            border: none !important;
+            background-color: #EBEBEB !important;
+            color: #000000 !important;
+        }.erL690_8JwUW-R4bJRcfl:enabled:hover {
+            color: #000000 !important;
+            background-color: #DBDBDB !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: none !important;
+        }.erL690_8JwUW-R4bJRcfl:enabled:focus {
+            background-color: #DBDBDB !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: 2px solid #000000 !important;
+        }.erL690_8JwUW-R4bJRcfl:disabled {
+            opacity: 1 !important;
+            color: rgba(0, 0, 0, 0.2) !important;
+            background-color: rgba(0, 0, 0, 0.2) !important;
+            border: none !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label::before {
+            border: 1px solid #000000 !important;
+            background-color: #FFFFFF !important;
+        }._1HSFn0HzGo6w4ADApV8-c4 {
+            outline: 2px solid rgba(0, 0, 0, 0.8) !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked + label::after {
+            background-color: #000000 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:hover::before {
+            border: 1px solid #0067B8 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:hover::after {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:focus::before {
+            border: 1px solid #0067B8 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:focus::after {
+            background-color: #000000 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled + label::before {
+            border: 1px solid rgba(0, 0, 0, 0.2) !important;
+            background-color: rgba(0, 0, 0, 0.2) !important;
+        }</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"name":"Learn","position":1,"@type":"ListItem","item":"https://learn.microsoft.com/zh-cn/"},{"name":"Windows","position":2,"@type":"ListItem","item":"https://learn.microsoft.com/zh-cn/windows/"},{"name":"应用","position":3,"@type":"ListItem","item":"https://learn.microsoft.com/zh-cn/windows/apps/"},{"name":"Win32","position":4,"@type":"ListItem","item":"https://learn.microsoft.com/zh-cn/windows/win32/"},{"name":"API","position":5,"@type":"ListItem","item":"https://learn.microsoft.com/zh-cn/windows/win32/api/"},{"name":"系统服务","position":6,"@type":"ListItem","item":"https://learn.microsoft.com/zh-cn/windows/win32/api/_base/"},{"name":"Sysinfoapi.h","position":7,"@type":"ListItem","item":"https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/"},{"name":"GlobalMemoryStatusEx 函数","position":8,"@type":"ListItem"}]}</script></head>
+
+<body lang="zh-cn" dir="ltr" style="">
+	<div class="header-holder has-default-focus">
+		<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#main" style="z-index: 1070" class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center  has-body-background" tabindex="1">跳转至主内容</a><div id="cookie-consent-holder" data-test-id="cookie-consent-container"><div id="wcpConsentBannerCtrl" class="_23tra1HsiiP6cT-Cka-ycB" dir="ltr" role="alert">
+        <div class="_1Upc2NjY8AlDn177YoVj0y">
+            <span class="_1V_hlU-7jdtPiooHMu89BB w8hcgFksdo30C8w-bygqu">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 44 44" width="24px" height="24px" fill="none" stroke="currentColor">
+          <circle cx="22" cy="22" r="20" stroke-width="2"></circle>
+          <line x1="22" x2="22" y1="18" y2="33" stroke-width="3"></line>
+          <line x1="22" x2="22" y1="12" y2="15" stroke-width="3"></line>
+        </svg>
+        </span> <!--  used for icon  -->
+            <p class="f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu">
+                我们使用可选的 Cookie，通过社交媒体连接等方式改善你在我们网站上的体验，并且根据你的在线活动投放个性化的广告。 如果你拒绝可选 Cookie，则我们将仅使用为你提供服务所必须的 Cookie。 你可以单击页面底部的“管理 Cookie”更改你的选择。<a target="_blank" href="https://go.microsoft.com/fwlink/?LinkId=521839">隐私声明</a> <a target="_blank" href="https://aka.ms/3rdpartycookies">第三方 Cookie</a>
+            </p>
+        </div>
+
+        <div class="_2j0fmugLb1FgYz6KPuB91w">
+            <button type="button" class="_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl">接受</button>
+            <button type="button" class="_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl">拒绝</button>
+            <button type="button" class="_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl">管理 Cookie</button>
+        </div>
+        </div></div><div id="banner-holder" class="has-default-focus has-overflow-hidden display-none-visual-diff theme-light"><!----><section data-bi-name="tier1-event-banner" data-dismissable="disappearing" class="tier1-event-banner position-relative padding-block-lg padding-block-md-tablet learn-challenge-2024-banner display-none-visual-diff">
+		<div class="uhf-container display-flex-tablet align-items-center">
+			<div class="has-backdrop-filter-blur margin-right-xxl-tablet">
+				<h2 class="title is-2 margin-bottom-xs"><!---->Microsoft Learn Challenge<!----></h2>
+				<p class="font-size-sm"><!---->Nov 23, 2024 – Jan 10, 2025<!----></p>
+			</div>
+			<p class="container is-max-mobile display-none display-block-widescreen has-backdrop-filter-blur font-size-sm margin-left-none margin-right-xxl text-wrap-pretty">
+				Build skills in the latest technologies and earn a digital badge by January 10!
+			</p>
+			<a data-bi-name="CTA" class="button margin-top-sm margin-bottom-sm-tablet " href="https://aka.ms/MSIgniteChallenge/Tier1Banner?wt.mc_id=ignite24_learnbanner_tier1_cnl">
+				<span><!---->立即注册<!----></span>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</a>
+		</div>
+		<button type="button" data-dismiss="" data-bi-name="close" class="button delete delete-lg position-absolute top-0 right-0 margin-xs margin-sm-tablet ">
+			<span class="visually-hidden"><!---->消除警报<!----></span>
+		</button>
+	</section><!----></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;" hidden="">
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">此浏览器不再受支持。</p>
+				<p style="font-size: 16px; margin-top: 16px;">请升级到 Microsoft Edge 以使用最新的功能、安全更新和技术支持。</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881" style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">下载 Microsoft Edge</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge" style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">有关 Internet Explorer 和 Microsoft Edge 的详细信息</a>
+				</div>
+			</div>
+		</div>
+		<!-- liquid-tag banners global -->
+
+		<!-- site header -->
+		<header id="ms--site-header" data-test-id="site-header-wrapper" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+			<div id="ms--mobile-nav" class="site-header display-none-tablet padding-inline-none gap-none" data-bi-name="mobile-header" data-test-id="mobile-header"><!---->
+		<div id="ms--site-header-hamburger" data-test-id="site-header-hamburger">
+			<button type="button" class="button button-clear inner-focus" data-test-id="mobile-nav-open-button" data-bi-name="mobile-nav-open-button" title="全球导航" aria-label="全球导航">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-menu"></span>
+				</span>
+			</button>
+		</div>
+
+		<!-- Brand -->
+		
+		<a class="site-header-brand" itemprop="url" href="https://learn.microsoft.com/zh-cn/" data-bi-name="site-header-brand-learn-mobile" data-test-id="site-header-brand-mobile">
+			<span><!---->Learn<!----></span>
+		</a>
+	
+
+		<!-- MS logo -->
+		
+				<a href="https://www.microsoft.com/" aria-label="Microsoft" itemprop="url" data-bi-name="site-header-microsoft-logo-mobile" data-test-id="site-header-microsoft-logo-mobile" class="site-header-logo site-header-logo-centered">
+					
+		<svg aria-hidden="true" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" itemprop="logo" itemscope="itemscope">
+			<path d="M11.5216 0.5H0V11.9067H11.5216V0.5Z" fill="#f25022"></path>
+			<path d="M24.2418 0.5H12.7202V11.9067H24.2418V0.5Z" fill="#7fba00"></path>
+			<path d="M11.5216 13.0933H0V24.5H11.5216V13.0933Z" fill="#00a4ef"></path>
+			<path d="M24.2418 13.0933H12.7202V24.5H24.2418V13.0933Z" fill="#ffb900"></path>
+		</svg>
+	
+				</a>
+		  
+
+		<!-- Search -->
+		
+		<search-expander data-test-id="site-header-search-mobile" class="display-flex flex-grow-1 justify-content-flex-end">
+			<div hidden="" id="ms--site-header-search-mobile" class="display-flex align-items-center gap-xxs width-full padding-left-xxs">
+				
+		<form class="flex-grow-1" method="GET" role="search" id="ms--site-header-search-form-mobile" data-bi-name="site-header-search-form-mobile" name="site-header-search-form-mobile" aria-label="搜索" action="https://learn.microsoft.com/zh-cn/search/">
+			<div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-header-search-autocomplete-input-mobile" data-test-id="site-header-search-autocomplete-input-mobile" class="autocomplete-input input 
+						
+						width-full" type="search" name="terms" aria-expanded="false" aria-owns="ax-1-listbox" aria-controls="ax-1-listbox" aria-activedescendant="" aria-label="搜索" aria-describedby="ms--site-header-search-autocomplete-input-mobile-description" placeholder="搜索" data-bi-name="site-header-search-autocomplete-input-mobile" pattern=".*">
+
+				
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+
+				<span hidden="" id="ms--site-header-search-autocomplete-input-mobile-description">
+					建议将在你键入时进行筛选
+				</span>
+			</div>
+
+			<ul role="listbox" id="ax-1-listbox" data-test-id="site-header-search-autocomplete-input-mobile-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xxs " aria-label="建议" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="Reference">
+			
+			
+		</form>
+	
+				<button data-search-expander-trigger-close="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search-mobile" aria-label="关闭搜索" data-bi-name="site-header-search-close-mobile" data-test-id="site-header-search-close-mobile">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-navigate-close"></span>
+					</span>
+				</button>
+			</div>
+			<button data-search-expander-trigger-open="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search-mobile" aria-label="打开搜素" data-bi-name="site-header-search-open-mobile" data-test-id="site-header-search-open-mobile">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-search"></span>
+				</span>
+			</button>
+		</search-expander>
+	
+
+		<!-- User avatar/Sign in -->
+		<!---->
+		<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#" data-bi-name="site-header-sign-in-mobile" data-test-id="site-header-sign-in-mobile" class="link-button font-size-sm flex-shrink-0 docs-sign-in auth-status-determined not-authenticated margin-right-xs margin-left-xxs">
+			登录
+		</a>
+	 
+		<details data-bi-name="site-header-user-mobile" class="popover popover-right auth-status-determined authenticated margin-right-xs margin-left-xxs">
+			<summary data-bi-name="site-header-user-avatar" aria-label="你的帐户" data-test-id="site-header-user-mobile">
+				<div class="persona persona-sm">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarThumbnailUrl">
+					</figure>
+				</div>
+			</summary>
+			<div class="popover-content width-auto" data-bi-name="site-header-user-menu">
+				<div class="persona persona-sm">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarUrl" aria-labelledby="ms--user-display-name-mobile">
+					</figure>
+					<div class="persona-details" data-test-id="persona-detail-mobile">
+						<p class="persona-name" data-profile-property="displayName" id="ms--user-display-name-mobile"></p>
+						<p data-profile-property="upn"></p>
+					</div>
+				</div>
+				<ul class="padding-block-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" class="font-size-sm" data-bi-name="site-header-user-profile" href="https://learn.microsoft.com/zh-cn/users/me/activity/">
+							配置文件
+						</a>
+					</li>
+					<li>
+						<a data-profile-property="settingsUrl" class="font-size-sm" data-bi-name="site-header-user-settings" href="https://learn.microsoft.com/zh-cn/users/me/settings/">
+							设置
+						</a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out font-size-sm" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#" data-bi-name="site-header-sign-out-mobile" data-test-id="site-header-user-sign-out-mobile">
+						注销
+					</a>
+				</div>
+			</div>
+		</details>
+	<!---->
+	<!----></div>
+			<div id="ms--primary-nav" class="site-header display-none display-flex-tablet" data-bi-name="L1-header" data-test-id="primary-header"><!---->
+		<!-- MS logo -->
+		
+				<a href="https://www.microsoft.com/" aria-label="Microsoft" itemprop="url" data-bi-name="site-header-microsoft-logo" data-test-id="site-header-microsoft-logo" class="site-header-logo ">
+					
+		<svg aria-hidden="true" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" itemprop="logo" itemscope="itemscope">
+			<path d="M11.5216 0.5H0V11.9067H11.5216V0.5Z" fill="#f25022"></path>
+			<path d="M24.2418 0.5H12.7202V11.9067H24.2418V0.5Z" fill="#7fba00"></path>
+			<path d="M11.5216 13.0933H0V24.5H11.5216V13.0933Z" fill="#00a4ef"></path>
+			<path d="M24.2418 13.0933H12.7202V24.5H24.2418V13.0933Z" fill="#ffb900"></path>
+		</svg>
+	
+				</a>
+		  
+
+		<!-- Divider -->
+		<div class="site-header-divider"></div>
+
+		<!-- Brand -->
+		
+		<a class="site-header-brand" itemprop="url" href="https://learn.microsoft.com/zh-cn/" data-bi-name="site-header-brand-learn" data-test-id="site-header-brand">
+			<span><!---->Learn<!----></span>
+		</a>
+	
+
+		<div id="ms--search-expander-wrapper" class="display-flex justify-content-space-between flex-grow-1 align-items-center overflow-x-hidden height-full">
+			<!-- Main Nav -->
+			
+		<overflow-menu class="align-self-stretch" style="display: block; overflow: hidden; width: 100%;">
+			<nav class="site-header-nav" data-bi-name="primary-nav" data-overflow-menu-container="" aria-label="全球" style="visibility: visible; overflow: hidden;">
+				<button type="button" data-overflow-menu-prev-button="" data-bi-name="site-header-btn-prev" class="button button-clear button-sm inner-focus" hidden="" aria-label="上一篇">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-chevron-left-light"></span>
+					</span>
+				</button>
+
+				
+		<ul class="display-flex gap-xxs-desktop">
+			<!---->
+			<li aria-setsize="4" aria-posinset="1">
+				<panel-controller data-bi-name="site-header-btn-1-discover">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-1" data-test-id="site-header-panel-controller-1" style="white-space: nowrap;">
+						<span><!---->发现<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-1" data-bi-name="panel-1-discover" data-test-id="site-header-panel-1">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-cards">
+				<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-1-documentation">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/docs/">
+								文档
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->有关 Microsoft 开发人员工具和技术的深度文章<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-2-training">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/training/">
+								培训
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->个性化学习路径和课程<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-3-credentials">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/credentials/">
+								凭证
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->全球认可、行业公认的凭证<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-4-qna">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/answers/">
+								问答
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->经 Microsoft 审核的技术问题和解答<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-5-code-samples">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/samples/">
+								代码示例
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Microsoft 开发人员工具和技术的代码示例库<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-6-assessments">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/assessments/">
+								评估
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->交互式特选指南和建议<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-7-shows">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/shows/">
+								节目
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->来自 Microsoft 专家的数千小时原创节目<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-microsoft-learn-for-organizations">
+					<div class="card-content">
+						<p class="card-supertitle line-clamp-2 line-height-normal"><!---->适用于组织的 Microsoft Learn<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/training/organizations/">
+							提高团队的技术技能
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->访问特选资源，以提升团队技能水平，缩小技能差距。<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+			<li aria-setsize="4" aria-posinset="2">
+				<panel-controller data-bi-name="site-header-btn-2-product-documentation">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-2" data-test-id="site-header-panel-controller-2" style="white-space: nowrap;">
+						<span><!---->产品文档<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-2" data-bi-name="panel-2-product-documentation" data-test-id="site-header-panel-2">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-links">
+				<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/aspnet/" data-bi-name="panel-link-1-asp-dotnet">
+						ASP.NET
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/azure/" data-bi-name="panel-link-2-azure">
+						Azure
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/dynamics365/" data-bi-name="panel-link-3-dynamics365">
+						Dynamics 365
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/microsoft-365/" data-bi-name="panel-link-4-microsoft-365">
+						Microsoft 365
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/copilot/" data-bi-name="panel-link-5-copilot">
+						Microsoft Copilot
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/microsoft-edge/" data-bi-name="panel-link-6-microsoft-edge">
+						Microsoft Edge
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/entra/" data-bi-name="panel-link-7-microsoft-entra">
+						Microsoft Entra
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/graph/" data-bi-name="panel-link-8-microsoft-graph">
+						Microsoft Graph
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/mem/" data-bi-name="panel-link-9-microsoft-intune">
+						Microsoft Intune
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/purview/" data-bi-name="panel-link-10-microsoft-purview">
+						Microsoft Purview
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/microsoftteams/" data-bi-name="panel-link-11-microsoft-teams">
+						Microsoft Teams
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/dotnet/" data-bi-name="panel-link-12-dotnet">
+						.NET
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/power-apps/" data-bi-name="panel-link-13-power-apps">
+						Power Apps
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/power-bi/" data-bi-name="panel-link-14-power-bi">
+						Power BI
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/power-platform/" data-bi-name="panel-link-15-power-platform">
+						Power Platform
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/powershell/" data-bi-name="panel-link-16-powershell">
+						PowerShell
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/sql/" data-bi-name="panel-link-17-sql">
+						SQL
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/sysinternals/" data-bi-name="panel-link-18-sysinternals">
+						Sysinternals
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/visualstudio/" data-bi-name="panel-link-19-visual-studio">
+						Visual Studio
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/windows/" data-bi-name="panel-link-20-windows">
+						Windows
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/windows-server/" data-bi-name="panel-link-21-windows-server">
+						Windows Server
+					</a>
+				</li>
+			<!---->
+			</ul>
+			
+			<a class="button button-clear button-sm color-hyperlink justify-content-flex-start border-none background-color-transparent margin-top-sm" href="https://learn.microsoft.com/zh-cn/docs/" data-bi-name="panel-cta-view-all-products">
+				查看所有产品
+			</a>
+		
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-microsoft-learn-for-organizations">
+					<div class="card-content">
+						<p class="card-supertitle line-clamp-2 line-height-normal"><!---->适用于组织的 Microsoft Learn<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/training/organizations/">
+							提高团队的技术技能
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->访问特选资源，以提升团队技能水平，缩小技能差距。<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+			<li aria-setsize="4" aria-posinset="3">
+				<panel-controller data-bi-name="site-header-btn-3-dev-languages">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-3" data-test-id="site-header-panel-controller-3" style="white-space: nowrap;">
+						<span><!---->开发语言<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-3" data-bi-name="panel-3-dev-languages" data-test-id="site-header-panel-3">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-links">
+				<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/cpp/" data-bi-name="panel-link-1-cpp">
+						C++
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/dotnet/csharp/" data-bi-name="panel-link-2-csharp">
+						C#
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/dax/" data-bi-name="panel-link-3-dax">
+						DAX
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/java/" data-bi-name="panel-link-4-java">
+						Java
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/odata/" data-bi-name="panel-link-5-odata">
+						OData
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/openapi/" data-bi-name="panel-link-6-open-api">
+						OpenAPI
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/powerquery-m/" data-bi-name="panel-link-7-power-query-m">
+						Power Query M
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/office/vba/" data-bi-name="panel-link-8-vba">
+						VBA
+					</a>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-microsoft-learn-for-organizations">
+					<div class="card-content">
+						<p class="card-supertitle line-clamp-2 line-height-normal"><!---->适用于组织的 Microsoft Learn<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/training/organizations/">
+							提高团队的技术技能
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->访问特选资源，以提升团队技能水平，缩小技能差距。<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+			<li aria-setsize="4" aria-posinset="4">
+				<panel-controller data-bi-name="site-header-btn-4-topics">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-4" data-test-id="site-header-panel-controller-4" style="white-space: nowrap;">
+						<span><!---->主题<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-4" data-bi-name="panel-4-topics" data-test-id="site-header-panel-4">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-links">
+				<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/ai/" data-bi-name="panel-link-1-ai">
+						人工智能
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/compliance/" data-bi-name="panel-link-2-compliance">
+						合规性
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/devops/" data-bi-name="panel-link-3-devops">
+						DevOps
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/platform-engineering/" data-bi-name="panel-link-4-platform-engineering">
+						平台工程
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/zh-cn/security/" data-bi-name="panel-link-5-security">
+						安全性
+					</a>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-microsoft-learn-for-organizations">
+					<div class="card-content">
+						<p class="card-supertitle line-clamp-2 line-height-normal"><!---->适用于组织的 Microsoft Learn<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/zh-cn/training/organizations/">
+							提高团队的技术技能
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->访问特选资源，以提升团队技能水平，缩小技能差距。<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+		</ul>
+	
+
+				<button type="button" data-overflow-menu-next-button="" data-bi-name="site-header-btn-next" class="button button-clear button-sm inner-focus margin-left-auto" hidden="" aria-label="下一步">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-chevron-right-light"></span>
+					</span>
+				</button>
+			</nav>
+		</overflow-menu>
+	
+
+			<!-- Search -->
+			
+		<search-expander data-test-id="site-header-search" class="flex-grow-1 margin-left-xxs">
+			<div hidden="" id="ms--site-header-search" class="display-flex align-items-center gap-xxs ">
+				
+		<form class="flex-grow-1" method="GET" role="search" id="ms--site-header-search-form" data-bi-name="site-header-search-form" name="site-header-search-form" aria-label="搜索" action="https://learn.microsoft.com/zh-cn/search/">
+			<div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-header-search-autocomplete-input" data-test-id="site-header-search-autocomplete-input" class="autocomplete-input input input-sm
+						
+						width-full" type="search" name="terms" aria-expanded="false" aria-owns="ax-0-listbox" aria-controls="ax-0-listbox" aria-activedescendant="" aria-label="搜索" aria-describedby="ms--site-header-search-autocomplete-input-description" placeholder="搜索" data-bi-name="site-header-search-autocomplete-input" pattern=".*">
+
+				
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+
+				<span hidden="" id="ms--site-header-search-autocomplete-input-description">
+					建议将在你键入时进行筛选
+				</span>
+			</div>
+
+			<ul role="listbox" id="ax-0-listbox" data-test-id="site-header-search-autocomplete-input-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xxs " aria-label="建议" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="Reference">
+			
+			
+		</form>
+	
+				<button data-search-expander-trigger-close="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search" aria-label="关闭搜索" data-bi-name="site-header-search-close" data-test-id="site-header-search-close">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-navigate-close"></span>
+					</span>
+				</button>
+			</div>
+			<button data-search-expander-trigger-open="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search" aria-label="打开搜素" data-bi-name="site-header-search-open" data-test-id="site-header-search-open">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-search"></span>
+				</span>
+			</button>
+		</search-expander>
+	
+		</div>
+
+		<!-- User avatar/Sign in -->
+		<!---->
+		<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#" data-bi-name="site-header-sign-in" data-test-id="site-header-sign-in" class="link-button font-size-sm flex-shrink-0 docs-sign-in auth-status-determined not-authenticated ">
+			登录
+		</a>
+	 
+		<details data-bi-name="site-header-user" class="popover popover-right auth-status-determined authenticated ">
+			<summary data-bi-name="site-header-user-avatar" aria-label="你的帐户" data-test-id="site-header-user">
+				<div class="persona ">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarThumbnailUrl">
+					</figure>
+				</div>
+			</summary>
+			<div class="popover-content width-auto" data-bi-name="site-header-user-menu">
+				<div class="persona ">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarUrl" aria-labelledby="ms--user-display-name">
+					</figure>
+					<div class="persona-details" data-test-id="persona-detail">
+						<p class="persona-name" data-profile-property="displayName" id="ms--user-display-name"></p>
+						<p data-profile-property="upn"></p>
+					</div>
+				</div>
+				<ul class="padding-block-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" class="font-size-sm" data-bi-name="site-header-user-profile" href="https://learn.microsoft.com/zh-cn/users/me/activity/">
+							配置文件
+						</a>
+					</li>
+					<li>
+						<a data-profile-property="settingsUrl" class="font-size-sm" data-bi-name="site-header-user-settings" href="https://learn.microsoft.com/zh-cn/users/me/settings/">
+							设置
+						</a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out font-size-sm" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#" data-bi-name="site-header-sign-out" data-test-id="site-header-user-sign-out">
+						注销
+					</a>
+				</div>
+			</div>
+		</details>
+	<!---->
+	<!----></div>
+			<div id="ms--secondary-nav" class="display-none display-flex-tablet" data-bi-name="L2-header" data-test-id="secondary-header"><!----><div class="site-header width-full"><!----> 
+		<a class="site-header-brand font-size-h6 padding-inline-none margin-right-xxs" itemprop="url" href="https://learn.microsoft.com/zh-cn/windows/apps" data-bi-name="secondary-nav-link-category-windows-app-development">
+			<span>
+				Windows 应用开发
+				
+			</span>
+		</a>
+	 
+		
+		<nav class="site-header-nav width-auto" data-bi-name="secondary-nav" aria-label="站点">
+			<ul class="display-flex">
+				<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-89" data-bi-name="secondary-nav-btn-1-explore" value="undefined">
+				<span><!---->探究<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-89" aria-label="探究" data-bi-name="secondary-nav-menu-1-explore">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/get-started" data-bi-name="secondary-nav-link-1-desktop-app-types">
+						<span><!---->桌面应用类型<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/windows-app-sdk" data-bi-name="secondary-nav-link-2-windows-app-sdk">
+						<span><!---->Windows 应用 SDK<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/winui/" data-bi-name="secondary-nav-link-3-windows-ui-library">
+						<span><!---->Windows UI 库<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/msix" data-bi-name="secondary-nav-link-4-msix">
+						<span><!---->MSIX<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-90" data-bi-name="secondary-nav-btn-2-development" value="undefined">
+				<span><!---->开发<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-90" aria-label="开发" data-bi-name="secondary-nav-menu-2-development">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/get-started" data-bi-name="secondary-nav-link-1-get-started">
+						<span><!---->入门<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/design" data-bi-name="secondary-nav-link-2-design">
+						<span><!---->设计<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/develop" data-bi-name="secondary-nav-link-3-develop">
+						<span><!---->开发<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/package-and-deploy" data-bi-name="secondary-nav-link-4-deploy">
+						<span><!---->部署<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/get-started/samples" data-bi-name="secondary-nav-link-5-samples">
+						<span><!---->示例<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-91" data-bi-name="secondary-nav-btn-3-platforms" value="undefined">
+				<span><!---->平台<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-91" aria-label="平台" data-bi-name="secondary-nav-menu-3-platforms">
+				<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-92" data-bi-name="secondary-nav-btn-1-desktop-apps" value="undefined">
+				<span><!---->桌面应用<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-92" aria-label="桌面应用" data-bi-name="secondary-nav-menu-1-desktop-apps">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/winui" data-bi-name="secondary-nav-link-1-winui-3">
+						<span><!---->WinUI 3<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/win32" data-bi-name="secondary-nav-link-2-win32">
+						<span><!---->Win32<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf" data-bi-name="secondary-nav-link-3-wpf">
+						<span><!---->WPF<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/dotnet/desktop/winforms" data-bi-name="secondary-nav-link-4-windows-forms">
+						<span><!---->Windows 窗体<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/uwp" data-bi-name="secondary-nav-link-5-uwp">
+						<span><!---->UWP<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/web" data-bi-name="secondary-nav-link-2-web">
+						<span><!---->Web<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/iot/" data-bi-name="secondary-nav-link-3-windows-iot">
+						<span><!---->Windows IoT<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/mixed-reality/" data-bi-name="secondary-nav-link-4-mixed-reality">
+						<span><!---->混合现实<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/gaming/gdk/" data-bi-name="secondary-nav-link-5-games">
+						<span><!---->游戏<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a data-test-id="header-link-故障排除" class="has-external-link-indicator site-header-button " href="https://learn.microsoft.com/zh-cn/troubleshoot/windows/win32/" data-bi-name="secondary-nav-link-4-troubleshooting">
+						<span><!---->故障排除<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-93" data-bi-name="secondary-nav-btn-5-resources" value="undefined">
+				<span><!---->资源<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-93" aria-label="资源" data-bi-name="secondary-nav-menu-5-resources">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/windows/downloads" data-bi-name="secondary-nav-link-1-downloads">
+						<span><!---->下载<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/windows/" data-bi-name="secondary-nav-link-2-windows-dev-center">
+						<span><!---->Windows 开发人员中心<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/windows/support" data-bi-name="secondary-nav-link-3-windows-developer-support">
+						<span><!---->Windows 开发人员支持<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://insider.windows.com/" data-bi-name="secondary-nav-link-4-windows-insider-program">
+						<span><!---->Windows 预览体验计划<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/windows/windows-for-developers/" data-bi-name="secondary-nav-link-5-whats-new-for-windows-11">
+						<span><!---->Windows 11 的新增功能<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/microsoft-store" data-bi-name="secondary-nav-link-6-microsoft-store">
+						<span><!---->Microsoft Store<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/training/browse/?products=windows" data-bi-name="secondary-nav-link-7-windows-training">
+						<span><!---->Windows 培训<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/answers/products/windows" data-bi-name="secondary-nav-link-8-windows-on-qna">
+						<span><!---->Windows Q&amp;A<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://twitter.com/windowsdev" data-bi-name="secondary-nav-link-9-windows-developer-on-twitter">
+						<span><!---->Twitter 上的 Windows 开发人员<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-94" data-bi-name="secondary-nav-btn-more" value="undefined">
+				<span><!---->更多<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-94" aria-label="更多" data-bi-name="secondary-nav-menu-more">
+				<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-95" data-bi-name="secondary-nav-btn-1-explore" value="undefined">
+				<span><!---->探究<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-95" aria-label="探究" data-bi-name="secondary-nav-menu-1-explore">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/get-started" data-bi-name="secondary-nav-link-1-desktop-app-types">
+						<span><!---->桌面应用类型<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/windows-app-sdk" data-bi-name="secondary-nav-link-2-windows-app-sdk">
+						<span><!---->Windows 应用 SDK<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/winui/" data-bi-name="secondary-nav-link-3-windows-ui-library">
+						<span><!---->Windows UI 库<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/msix" data-bi-name="secondary-nav-link-4-msix">
+						<span><!---->MSIX<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-96" data-bi-name="secondary-nav-btn-2-development" value="undefined">
+				<span><!---->开发<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-96" aria-label="开发" data-bi-name="secondary-nav-menu-2-development">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/get-started" data-bi-name="secondary-nav-link-1-get-started">
+						<span><!---->入门<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/design" data-bi-name="secondary-nav-link-2-design">
+						<span><!---->设计<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/develop" data-bi-name="secondary-nav-link-3-develop">
+						<span><!---->开发<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/package-and-deploy" data-bi-name="secondary-nav-link-4-deploy">
+						<span><!---->部署<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/get-started/samples" data-bi-name="secondary-nav-link-5-samples">
+						<span><!---->示例<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-97" data-bi-name="secondary-nav-btn-3-platforms" value="undefined">
+				<span><!---->平台<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-97" aria-label="平台" data-bi-name="secondary-nav-menu-3-platforms">
+				<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-98" data-bi-name="secondary-nav-btn-1-desktop-apps" value="undefined">
+				<span><!---->桌面应用<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-98" aria-label="桌面应用" data-bi-name="secondary-nav-menu-1-desktop-apps">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/apps/winui" data-bi-name="secondary-nav-link-1-winui-3">
+						<span><!---->WinUI 3<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/win32" data-bi-name="secondary-nav-link-2-win32">
+						<span><!---->Win32<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf" data-bi-name="secondary-nav-link-3-wpf">
+						<span><!---->WPF<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/dotnet/desktop/winforms" data-bi-name="secondary-nav-link-4-windows-forms">
+						<span><!---->Windows 窗体<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/uwp" data-bi-name="secondary-nav-link-5-uwp">
+						<span><!---->UWP<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/web" data-bi-name="secondary-nav-link-2-web">
+						<span><!---->Web<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/iot/" data-bi-name="secondary-nav-link-3-windows-iot">
+						<span><!---->Windows IoT<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/windows/mixed-reality/" data-bi-name="secondary-nav-link-4-mixed-reality">
+						<span><!---->混合现实<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/gaming/gdk/" data-bi-name="secondary-nav-link-5-games">
+						<span><!---->游戏<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li hidden="">
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/troubleshoot/windows/win32/" data-bi-name="secondary-nav-link-4-troubleshooting">
+						<span><!---->故障排除<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-99" data-bi-name="secondary-nav-btn-5-resources" value="undefined">
+				<span><!---->资源<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-99" aria-label="资源" data-bi-name="secondary-nav-menu-5-resources">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/windows/downloads" data-bi-name="secondary-nav-link-1-downloads">
+						<span><!---->下载<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/windows/" data-bi-name="secondary-nav-link-2-windows-dev-center">
+						<span><!---->Windows 开发人员中心<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/windows/support" data-bi-name="secondary-nav-link-3-windows-developer-support">
+						<span><!---->Windows 开发人员支持<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://insider.windows.com/" data-bi-name="secondary-nav-link-4-windows-insider-program">
+						<span><!---->Windows 预览体验计划<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/windows/windows-for-developers/" data-bi-name="secondary-nav-link-5-whats-new-for-windows-11">
+						<span><!---->Windows 11 的新增功能<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://developer.microsoft.com/microsoft-store" data-bi-name="secondary-nav-link-6-microsoft-store">
+						<span><!---->Microsoft Store<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/training/browse/?products=windows" data-bi-name="secondary-nav-link-7-windows-training">
+						<span><!---->Windows 培训<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/zh-cn/answers/products/windows" data-bi-name="secondary-nav-link-8-windows-on-qna">
+						<span><!---->Windows Q&amp;A<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://twitter.com/windowsdev" data-bi-name="secondary-nav-link-9-windows-developer-on-twitter">
+						<span><!---->Twitter 上的 Windows 开发人员<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+			</ul>
+		</li>
+	<!---->
+			</ul>
+		</nav>
+	
+		<span class="nav-bar-spacer"></span>
+		 <div class="buttons"><!----> 
+		<a data-test-id="navbar-primary-cta" class="button button-sm button-primary button-filled margin-right-none" href="https://partner.microsoft.com/dashboard" data-bi-name="secondary-nav-cta-primary-dashboard">
+			仪表板
+		</a>
+	<!----></div>  
+	 <!----></div><!----></div>
+		</header><div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button="">
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">目录</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>退出焦点模式</span>
+					</button>
+				</div>
+			</div><div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"><!---->
+			<section data-dismissable="disappearing" data-bi-name="banner" class=" banner">
+				<div class="banner-content uhf-container display-flex align-items-center">
+					<div class="level justify-content-flex-start margin-bottom-none">
+						<div class="level-left flex-shrink-1">
+							<div class="level-item flex-shrink-1">
+								<p class="has-text-white-static disclaimer-title margin-block-xxs margin-right-xs has-line-height-reset">
+									<span class="icon">
+										<span class="docon docon-status-error-outline" aria-hidden="true"></span>
+									</span>
+									<span><!---->此主题的部分內容可能由机器或 AI 翻译。<!----></span>
+								</p>
+							</div>
+						</div>
+						
+					</div>
+					<button data-dismiss="" data-bi-name="close" type="button" class="delete position-absolute top-0 right-0 margin-xxs delete-lg">
+						<span class="visually-hidden"><!---->消除警报<!----></span>
+					</button>
+				</div>
+			</section>
+		<!----></div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile "><div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column" aria-label="主要节点" data-bi-name="left toc" role="navigation" style="top: 24px; height: calc(100vh - 49px); max-height: 3552.91px;"><form action="javascript:" role="search" aria-label="搜索" class="margin-bottom-xxs"><label class="visually-hidden" for="ax-2">搜索</label><div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-2" data-test-id="ax-2" class="autocomplete-input input input-sm
+						control has-icons-left
+						width-full" type="text" aria-expanded="false" aria-owns="ax-3-listbox" aria-controls="ax-3-listbox" aria-activedescendant="" aria-describedby="ms--ax-2-description" placeholder="按标题筛选" pattern=".*">
+
+				
+					<span aria-hidden="true" class="icon is-small is-left">
+						<span class="has-text-primary docon docon-filter-settings"></span>
+					</span>
+			  
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+
+				<span hidden="" id="ms--ax-2-description">
+					建议将在你键入时进行筛选
+				</span>
+			</div>
+
+			<ul role="listbox" id="ax-3-listbox" data-test-id="ax-2-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xxs " aria-label="建议" hidden="">
+				
+				
+			</ul>
+		<!----></div></form><ul class="tree table-of-contents is-vertically-scrollable flex-grow-1 flex-shrink-1" role="tree" aria-label="目录" data-bi-name="tree" data-is-collapsible="true"><li role="none"><a aria-setsize="71" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-cn/windows/win32/api/_base/">系统服务</a></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Atlthunk.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Avrt.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" id="title-4-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Dbghelp.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" id="title-5-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Dbt.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" id="title-6-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Debugapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" id="title-7-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Dispatcherqueue.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="8" role="treeitem" tabindex="-1" id="title-8-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Enclaveapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="9" role="treeitem" tabindex="-1" id="title-9-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Errhandlingapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="10" role="treeitem" tabindex="-1" id="title-10-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Fibersapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="11" role="treeitem" tabindex="-1" id="title-11-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Fileapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="12" role="treeitem" tabindex="-1" id="title-12-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Handleapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="13" role="treeitem" tabindex="-1" id="title-13-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Heapapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="14" role="treeitem" tabindex="-1" id="title-14-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Imagehlp.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="15" role="treeitem" tabindex="-1" id="title-15-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Interlockedapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="16" role="treeitem" tabindex="-1" id="title-16-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Ioapiset.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="17" role="treeitem" tabindex="-1" id="title-17-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Jobapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="18" role="treeitem" tabindex="-1" id="title-18-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Jobapi2.h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="19" role="treeitem" tabindex="-1" id="title-19-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Libloaderapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="20" role="treeitem" tabindex="-1" id="title-20-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Libloaderapi2.h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="21" role="treeitem" tabindex="-1" id="title-21-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Lmserver.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="22" role="treeitem" tabindex="-1" id="title-22-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Mcx.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="23" role="treeitem" tabindex="-1" id="title-23-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Memoryapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="24" role="treeitem" tabindex="-1" id="title-24-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Minidumpapiset.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="25" role="treeitem" tabindex="-1" id="title-25-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Minwinbase.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="26" role="treeitem" tabindex="-1" id="title-26-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Namedpipeapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="27" role="treeitem" tabindex="-1" id="title-27-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Namespaceapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="28" role="treeitem" tabindex="-1" id="title-28-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Ntenclv.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="29" role="treeitem" tabindex="-1" id="title-29-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Powerbase.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="30" role="treeitem" tabindex="-1" id="title-30-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Powersetting.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="31" role="treeitem" tabindex="-1" id="title-31-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Powrprof.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="32" role="treeitem" tabindex="-1" id="title-32-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Processenv.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="33" role="treeitem" tabindex="-1" id="title-33-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Processtopologyapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="34" role="treeitem" tabindex="-1" id="title-34-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Profileapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="35" role="treeitem" tabindex="-1" id="title-35-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Pwm.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="36" role="treeitem" tabindex="-1" id="title-36-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Realtimeapiset.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="37" role="treeitem" tabindex="-1" id="title-37-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Rtworkq.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="38" role="treeitem" tabindex="-1" id="title-38-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Secext.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="39" role="treeitem" tabindex="-1" id="title-39-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Storprop.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="40" role="treeitem" tabindex="-1" id="title-40-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Synchapi.<wbr>h</span></li><li class="tree-item is-expanded" aria-setsize="71" aria-level="1" aria-posinset="41" role="treeitem" tabindex="-1" id="title-41-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Sysinfoapi.<wbr>h</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="4" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/">概述</a></li><li role="none"><a aria-setsize="4" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-getphysicallyinstalledsystemmemory">GetPhysicallyInstalledSystemMemory 函数</a></li><li role="none"><a aria-setsize="4" aria-level="2" aria-posinset="3" role="treeitem" tabindex="0" class="tree-item is-leaf has-external-link-indicator is-selected" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex" aria-current="page">GlobalMemoryStatusEx 函数</a></li><li role="none"><a aria-setsize="4" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/ns-sysinfoapi-memorystatusex">MEMORYSTATUSEX 结构</a></li></ul></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="42" role="treeitem" tabindex="-1" id="title-42-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Systemtopologyapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="43" role="treeitem" tabindex="-1" id="title-43-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Threadpoolapiset.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="44" role="treeitem" tabindex="-1" id="title-44-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Threadpoollegacyapiset.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="45" role="treeitem" tabindex="-1" id="title-45-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Timeprov.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="46" role="treeitem" tabindex="-1" id="title-46-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Timezoneapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="47" role="treeitem" tabindex="-1" id="title-47-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Utilapiset.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="48" role="treeitem" tabindex="-1" id="title-48-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vds.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="49" role="treeitem" tabindex="-1" id="title-49-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vdshwprv.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="50" role="treeitem" tabindex="-1" id="title-50-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vdslun.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="51" role="treeitem" tabindex="-1" id="title-51-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Versionhelpers.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="52" role="treeitem" tabindex="-1" id="title-52-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vsadmin.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="53" role="treeitem" tabindex="-1" id="title-53-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vsbackup.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="54" role="treeitem" tabindex="-1" id="title-54-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vsmgmt.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="55" role="treeitem" tabindex="-1" id="title-55-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vsprov.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="56" role="treeitem" tabindex="-1" id="title-56-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vss.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="57" role="treeitem" tabindex="-1" id="title-57-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vswriter.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="58" role="treeitem" tabindex="-1" id="title-58-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Waasapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="59" role="treeitem" tabindex="-1" id="title-59-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Waasapitypes.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="60" role="treeitem" tabindex="-1" id="title-60-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Wct.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="61" role="treeitem" tabindex="-1" id="title-61-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winbase.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="62" role="treeitem" tabindex="-1" id="title-62-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winddi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="63" role="treeitem" tabindex="-1" id="title-63-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Windowsceip.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="64" role="treeitem" tabindex="-1" id="title-64-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winenclaveapi.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="65" role="treeitem" tabindex="-1" id="title-65-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winerror.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="66" role="treeitem" tabindex="-1" id="title-66-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winioctl.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="67" role="treeitem" tabindex="-1" id="title-67-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winnt.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="68" role="treeitem" tabindex="-1" id="title-68-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winreg.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="69" role="treeitem" tabindex="-1" id="title-69-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winsvc.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="70" role="treeitem" tabindex="-1" id="title-70-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winternl.<wbr>h</span></li><li class="tree-item" aria-setsize="71" aria-level="1" aria-posinset="71" role="treeitem" tabindex="-1" id="title-71-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Winuser.<wbr>h</span></li></ul><div class="padding-xxs padding-none-tablet border-top border-bottom-tablet"><button class="button button-sm button-clear button-block inner-focus justify-content-flex-start-tablet" data-bi-name="download-pdf" rel="nofollow"><!---->
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-dictionary-download"></span>
+			</span>
+			<span><!---->下载 PDF<!----></span>
+		<!----></button></div></nav>
+			</div><!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps "><div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" class="" role="main" data-bi-name="content" lang="zh-cn" dir="ltr"><!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center "><details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm inner-focus" aria-label="所有痕迹">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"><!---->
+			<nav>
+				<ol class="list-style-none">
+					<!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-cn/">
+										Learn
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-cn/windows/">
+										Windows
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-cn/windows/apps/">
+										应用
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-cn/windows/win32/">
+										Win32
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-cn/windows/win32/api/">
+										API
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-cn/windows/win32/api/_base/">
+										系统服务
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/">
+										Sysinfoapi.<wbr>h
+									</a>
+								</li>
+							<!----><!----><!---->
+				</ol>
+			</nav>
+			
+		<!----></div>
+									</details>
+
+									<bread-crumbs id="article-header-breadcrumbs" data-test-id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" style="display: block; white-space: nowrap; overflow: hidden;"><!---->
+			<nav>
+				<ol class="breadcrumbs breadcrumbs-initial-slash">
+					<!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="" hidden="">
+									<a href="https://learn.microsoft.com/zh-cn/"><!---->Learn<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/zh-cn/windows/"><!---->Windows<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/zh-cn/windows/apps/"><!---->应用<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/zh-cn/windows/win32/"><!---->Win32<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/"><!---->API<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/_base/"><!---->系统服务<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="" style="">
+									<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/" style=""><!---->Sysinfoapi.h<!----></a>
+								</li>
+							<!----><!----><!---->
+				</ol>
+			</nav>
+		<!----></bread-crumbs><div id="article-header-page-actions" class="margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"><a id="lang-link-tablet" class="button button-primary button-clear button-sm display-none display-inline-flex-tablet" title="使用英语阅读" data-bi-name="language-toggle" data-read-in-link="" href="https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon="">
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text="">使用英语阅读</span>
+										</a><details class="popover popover-right add-item-popover">
+		<summary class="button button-clear button-sm button-primary display-none display-inline-flex-tablet" data-list-type="collection" data-list-item-title="GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps | Microsoft Learn" data-list-item-url="/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex" data-list-source="module" data-resource-type="" data-bi-name="add-to-list" aria-describedby="popover-content" aria-expanded="false">
+			
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">保存</span>
+											
+		</summary>
+		<div class="popover-content has-z-index-one">
+			<ul class="list-style-none margin-inline-none">
+				<li>
+					<button class="button button-clear button-sm button-primary" data-list-type="collection" data-list-item-title="GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps | Microsoft Learn" data-list-item-url="/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex" data-bi-name="add-to-collections" data-pressed="false" title="将 GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps | Microsoft Learn 添加到集合">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-circle-addition"></span>
+						</span>
+						<span class="collection-status">添加到集合</span>
+					</button>
+				</li>
+				<li>
+					<button class="button button-clear button-sm button-primary" data-list-type="plan" data-list-item-title="GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps | Microsoft Learn" data-list-item-url="/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex" data-bi-name="add-to-plans" data-pressed="false" title="将 GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps | Microsoft Learn 添加到计划">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-circle-addition"></span>
+						</span>
+						<span class="plan-status">添加到计划</span>
+					</button>
+				</li>
+				
+			</ul>
+		</div>
+	</details>
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="更多操作" title="更多操作">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-xs"><button data-page-action-item="overflow-mobile" type="button" class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet" data-bi-name="contents-expand" data-contents-button="" data-popover-close="">
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span><span class="contents-expand-title">目录</span></button><a id="lang-link-overflow" class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet" title="使用英语阅读" data-bi-name="language-toggle" data-page-action-item="overflow-mobile" data-check-hidden="true" data-read-in-link="" href="https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+													<span class="icon" aria-hidden="true" data-read-in-link-icon="">
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text="">使用英语阅读</span>
+												</a><button type="button" class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet" data-list-type="collection" data-bi-name="collection" title="将 GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps | Microsoft Learn 添加到集合" data-page-action-item="overflow-mobile" data-check-hidden="true" data-popover-close="" data-pressed="false">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">添加到集合</span>
+													</button>
+
+			 										
+													<button type="button" class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet" data-list-type="plan" data-bi-name="plan" title="将 GlobalMemoryStatusEx 函数 (sysinfoapi.h) - Win32 apps | Microsoft Learn 添加到计划" data-page-action-item="overflow-mobile" data-check-hidden="true" data-popover-close="" data-pressed="false">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="plan-status">添加到计划</span>
+													</button><div aria-hidden="true" class="margin-none" data-page-action-item="overflow-all"></div>
+														<hr class="display-none-tablet margin-bottom-xxs margin-top-xxs">
+														<h4 class="font-size-sm padding-left-xxs">通过</h4>
+
+													<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearn.microsoft.com%2Fzh-cn%2Fwindows%2Fwin32%2Fapi%2Fsysinfoapi%2Fnf-sysinfoapi-globalmemorystatusex%3FWT.mc_id%3Dfacebook">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-facebook-share font-size-md color-primary"></span>
+															</span>
+															<span class="margin-left-xxs">Facebook</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Flearn.microsoft.com%2Fzh-cn%2Fwindows%2Fwin32%2Fapi%2Fsysinfoapi%2Fnf-sysinfoapi-globalmemorystatusex%3FWT.mc_id%3Dtwitter&amp;text=%E4%BB%8A%E5%A4%A9%E6%88%91%E5%AE%8C%E6%88%90%E4%BA%86%20%22GlobalMemoryStatusEx%20%E5%87%BD%E6%95%B0%20(sysinfoapi.h)%20-%20Win32%20apps%20%7C%20Microsoft%20Learn%22%EF%BC%81%20%E6%88%91%E5%BE%88%E8%87%AA%E8%B1%AA%E8%83%BD%E5%A4%9F%E5%BA%86%E7%A5%9D%E8%BF%99%E4%B8%80%E6%88%90%E5%B0%B1%EF%BC%8C%E5%B9%B6%E5%B8%8C%E6%9C%9B%E8%BF%99%E8%83%BD%E6%BF%80%E5%8A%B1%E4%BD%A0%E5%BC%80%E5%A7%8B%E8%87%AA%E5%B7%B1%E7%9A%84%20%40MicrosoftLearn%20%E6%97%85%E7%A8%8B%EF%BC%81&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Flearn.microsoft.com%2Fzh-cn%2Fwindows%2Fwin32%2Fapi%2Fsysinfoapi%2Fnf-sysinfoapi-globalmemorystatusex%3FWT.mc_id%3Dtwitter">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-xlogo-share font-size-xxs"></span>
+															</span>
+															<span class="margin-left-xxs">x.com 共享</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=%E4%BB%8A%E5%A4%A9%E6%88%91%E5%AE%8C%E6%88%90%E4%BA%86%20%22GlobalMemoryStatusEx%20%E5%87%BD%E6%95%B0%20(sysinfoapi.h)%20-%20Win32%20apps%20%7C%20Microsoft%20Learn%22%EF%BC%81%20%E6%88%91%E5%BE%88%E8%87%AA%E8%B1%AA%E8%83%BD%E5%A4%9F%E5%BA%86%E7%A5%9D%E8%BF%99%E4%B8%80%E6%88%90%E5%B0%B1%EF%BC%8C%E5%B9%B6%E5%B8%8C%E6%9C%9B%E8%BF%99%E8%83%BD%E6%BF%80%E5%8A%B1%E4%BD%A0%E5%BC%80%E5%A7%8B%E8%87%AA%E5%B7%B1%E7%9A%84%20%40MicrosoftLearn%20%E6%97%85%E7%A8%8B%EF%BC%81%0A%0D%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fzh-cn%2Fwindows%2Fwin32%2Fapi%2Fsysinfoapi%2Fnf-sysinfoapi-globalmemorystatusex%3FWT.mc_id%3Dlinkedin">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-linked-in-logo font-size-sm color-primary"></span>
+															</span>
+															<span class="margin-left-xxs">LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start margin-bottom-xxs share-email" data-bi-name="email" data-page-action-item="overflow-all" href="mailto:?subject=%5B%E5%85%B1%E4%BA%AB%E6%96%87%E7%AB%A0%5D%20GlobalMemoryStatusEx%20%E5%87%BD%E6%95%B0%20(sysinfoapi.h)%20-%20Win32%20apps%20%7C%20Microsoft%20Learn&amp;body=%E4%BB%8A%E5%A4%A9%E6%88%91%E5%AE%8C%E6%88%90%E4%BA%86%20%22GlobalMemoryStatusEx%20%E5%87%BD%E6%95%B0%20(sysinfoapi.h)%20-%20Win32%20apps%20%7C%20Microsoft%20Learn%22%EF%BC%81%20%E6%88%91%E5%BE%88%E8%87%AA%E8%B1%AA%E8%83%BD%E5%A4%9F%E5%BA%86%E7%A5%9D%E8%BF%99%E4%B8%80%E6%88%90%E5%B0%B1%EF%BC%8C%E5%B9%B6%E5%B8%8C%E6%9C%9B%E8%BF%99%E8%83%BD%E6%BF%80%E5%8A%B1%E4%BD%A0%E5%BC%80%E5%A7%8B%E8%87%AA%E5%B7%B1%E7%9A%84%20%40MicrosoftLearn%20%E6%97%85%E7%A8%8B%EF%BC%81%0A%0D%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fzh-cn%2Fwindows%2Fwin32%2Fapi%2Fsysinfoapi%2Fnf-sysinfoapi-globalmemorystatusex%3FWT.mc_id%3Demail">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message font-size-sm color-primary"></span>
+															</span>
+															<span class="margin-left-xxs">电子邮件</span>
+														</a><hr>
+													<button class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus margin-top-xxs" title="打印" type="button" aria-label="打印" data-bi-name="print" data-page-action-item="overflow-all" data-popover-close="" data-print-page="" data-check-hidden="true">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print font-size-sm color-primary"></span>
+														</span>
+														<span class="margin-left-xxs">打印</span>
+													</button>
+											</div>
+										</details>
+										
+									</div></div>
+							</div>
+							<!-- end article-header --><div>
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button="" hidden="">
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span><span class="contents-expand-title">目录</span></button>
+							</div><!-- end mobile-contents button  -->
+
+							<div class="content "><h1 id="globalmemorystatusex-function-sysinfoapih">GlobalMemoryStatusEx 函数 (sysinfoapi.h) </h1><div class="display-flex justify-content-space-between align-items-center flex-wrap-wrap page-metadata-container">
+										<div class="margin-right-xxs">
+											<ul class="metadata page-metadata" data-bi-name="page info" lang="zh-cn" dir="ltr"><li>项目</li><li class="visibility-hidden-visual-diff"><time class="" data-article-date="" aria-label="文章评审日期" datetime="2024-03-02T05:33:00.000Z" data-article-date-source="calculated">2024/03/02</time>
+															</li></ul>
+										</div>
+<div id="user-feedback" class="margin-block-xxs display-none-print" data-hide-on-archived="">
+	<button id="user-feedback-button" data-test-id="conceptual-feedback-button" class="button button-sm button-clear button-primary" type="button" data-bi-name="user-feedback-button" data-user-feedback-button="">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-like"></span>
+		</span>
+		<span>反馈</span>
+	</button>
+</div></div><nav id="center-doc-outline" class="doc-outline display-none-print margin-bottom-sm" data-bi-name="intopic toc" aria-label="本文内容"><!----> 
+		<h2 id="ms--in-this-article" class="title is-6 margin-block-xs"><!---->本文内容<!----></h2>
+		<ol id="content-well-in-this-article-list" class="border-left padding-left-xxs">
+			<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#syntax"><!---->语法<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#parameters"><!---->参数<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#return-value"><!---->返回值<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#remarks"><!---->注解<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#requirements"><!---->要求<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#see-also"><!---->另请参阅<!----></a>
+					</li>
+				<!---->
+		</ol>
+	 
+		<button type="button" aria-expanded="false" data-show-more="" class="link-button font-weight-semibold font-size-sm margin-top-xxs margin-left-xs" aria-controls="content-well-in-this-article-list" data-title="显示另外 2 个" data-bi-name="show-more-btn">
+			<span class="show-more-text "><!---->显示另外 2 个<!----></span>
+			
+		</button>
+	 <!----></nav><!-- <content> --><p>检索有关系统当前物理内存和虚拟内存使用情况的信息。</p>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#syntax" aria-label="节标题：语法"></a><h2 id="syntax" class="heading-anchor">语法</h2></div>
+<div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">C++</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>复制</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre class="has-inner-focus"><code class="lang-cpp"><span><span class="hljs-function">BOOL <span class="hljs-title">GlobalMemoryStatusEx</span><span class="hljs-params">(
+  [in, out] LPMEMORYSTATUSEX lpBuffer
+)</span></span>;
+</span></code></pre>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#parameters" aria-label="节标题：参数"></a><h2 id="parameters" class="heading-anchor">参数</h2></div>
+<p><code>[in, out] lpBuffer</code></p>
+<p>指向 <a href="https://learn.microsoft.com/zh-cn/windows/desktop/api/sysinfoapi/ns-sysinfoapi-memorystatusex" data-linktype="absolute-path">MEMORYSTATUSEX</a> 结构的指针，该结构接收有关当前内存可用性的信息。</p>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#return-value" aria-label="节标题：返回值"></a><h2 id="return-value" class="heading-anchor">返回值</h2></div>
+<p>如果该函数成功，则返回值为非零值。</p>
+<p>如果函数失败，则返回值为零。 要获得更多的错误信息，请调用 GetLastError。</p>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#remarks" aria-label="节标题：注解"></a><h2 id="remarks" class="heading-anchor">注解</h2></div>
+<p>可以使用 <b>GlobalMemoryStatusEx</b> 函数来确定应用程序可以分配多少内存，而不会严重影响其他应用程序。</p>
+<p><b>GlobalMemoryStatusEx</b> 函数返回的信息是可变的。 无法保证对此函数的两次顺序调用将返回相同的信息。</p>
+<p><i>lpBuffer</i> 中 <a href="https://learn.microsoft.com/zh-cn/windows/desktop/api/sysinfoapi/ns-sysinfoapi-memorystatusex" data-linktype="absolute-path">MEMORYSTATUSEX</a> 结构的 <b>ullAvailPhys</b> 成员包括所有 NUMA 节点的内存。</p>
+<div class="heading-wrapper" data-heading-level="h4"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#examples" aria-label="节标题：示例"></a><h4 id="examples" class="heading-anchor">示例</h4></div>
+<p>以下代码演示 <b>了 GlobalMemoryStatusEx</b> 函数的简单用法。</p>
+<div class="codeHeader" id="code-try-1" data-bi-name="code-header"><span class="language">C++</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>复制</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre class="has-inner-focus"><code class="lang-cpp"><span><span class="hljs-comment">//  Sample output:</span>
+<span class="hljs-comment">//  There is       51 percent of memory in use.</span>
+<span class="hljs-comment">//  There are 2029968 total KB of physical memory.</span>
+<span class="hljs-comment">//  There are  987388 free  KB of physical memory.</span>
+<span class="hljs-comment">//  There are 3884620 total KB of paging file.</span>
+<span class="hljs-comment">//  There are 2799776 free  KB of paging file.</span>
+<span class="hljs-comment">//  There are 2097024 total KB of virtual memory.</span>
+<span class="hljs-comment">//  There are 2084876 free  KB of virtual memory.</span>
+<span class="hljs-comment">//  There are       0 free  KB of extended memory.</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;windows.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;tchar.h&gt;</span></span>
+
+<span class="hljs-comment">// Use to convert bytes to KB</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DIV 1024</span>
+
+<span class="hljs-comment">// Specify the width of the field in which to print the numbers. </span>
+<span class="hljs-comment">// The asterisk in the format specifier "%*I64d" takes an integer </span>
+<span class="hljs-comment">// argument and uses it to pad and right justify the number.</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> WIDTH 7</span>
+
+<span class="hljs-keyword">void</span> _tmain()
+{
+  MEMORYSTATUSEX statex;
+
+  statex.dwLength = <span class="hljs-keyword">sizeof</span> (statex);
+
+  GlobalMemoryStatusEx (&amp;statex);
+
+  _tprintf (TEXT(<span class="hljs-string">"There is  %*ld percent of memory in use.\n"</span>),
+            WIDTH, statex.dwMemoryLoad);
+  _tprintf (TEXT(<span class="hljs-string">"There are %*I64d total KB of physical memory.\n"</span>),
+            WIDTH, statex.ullTotalPhys/DIV);
+  _tprintf (TEXT(<span class="hljs-string">"There are %*I64d free  KB of physical memory.\n"</span>),
+            WIDTH, statex.ullAvailPhys/DIV);
+  _tprintf (TEXT(<span class="hljs-string">"There are %*I64d total KB of paging file.\n"</span>),
+            WIDTH, statex.ullTotalPageFile/DIV);
+  _tprintf (TEXT(<span class="hljs-string">"There are %*I64d free  KB of paging file.\n"</span>),
+            WIDTH, statex.ullAvailPageFile/DIV);
+  _tprintf (TEXT(<span class="hljs-string">"There are %*I64d total KB of virtual memory.\n"</span>),
+            WIDTH, statex.ullTotalVirtual/DIV);
+  _tprintf (TEXT(<span class="hljs-string">"There are %*I64d free  KB of virtual memory.\n"</span>),
+            WIDTH, statex.ullAvailVirtual/DIV);
+
+  <span class="hljs-comment">// Show the amount of extended memory available.</span>
+
+  _tprintf (TEXT(<span class="hljs-string">"There are %*I64d free  KB of extended memory.\n"</span>),
+            WIDTH, statex.ullAvailExtendedVirtual/DIV);
+}
+
+</span></code></pre>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#requirements" aria-label="节标题：要求"></a><h2 id="requirements" class="heading-anchor">要求</h2></div>
+<div class="buttons buttons-right margin-bottom-none margin-top-sm"><!----> <button class="button button-clear button-sm display-flex gap-xxs">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-expand color-primary"></span>
+		</span>
+		<span><!---->展开表<!----></span>
+	</button><!----></div><div class="has-inner-focus"><table aria-label="表 1" class="table table-sm margin-top-none">
+<thead>
+<tr>
+<th>要求</th>
+<th style="text-align: left;">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>最低受支持的客户端</strong></td>
+<td style="text-align: left;">Windows XP [桌面应用 | UWP 应用]</td>
+</tr>
+<tr>
+<td><strong>最低受支持的服务器</strong></td>
+<td style="text-align: left;">Windows Server 2003 [桌面应用 | UWP 应用]</td>
+</tr>
+<tr>
+<td><strong>目标平台</strong></td>
+<td style="text-align: left;">Windows</td>
+</tr>
+<tr>
+<td><strong>标头</strong></td>
+<td style="text-align: left;">sysinfoapi.h (包括 Windows.h) </td>
+</tr>
+<tr>
+<td><strong>Library</strong></td>
+<td style="text-align: left;">Kernel32.lib</td>
+</tr>
+<tr>
+<td><strong>DLL</strong></td>
+<td style="text-align: left;">Kernel32.dll</td>
+</tr>
+</tbody>
+</table></div>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-cn/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex#see-also" aria-label="节标题：另请参阅"></a><h2 id="see-also" class="heading-anchor">另请参阅</h2></div>
+<p><a href="https://learn.microsoft.com/zh-cn/windows/desktop/api/sysinfoapi/ns-sysinfoapi-memorystatusex" data-linktype="absolute-path">MEMORYSTATUSEX</a></p>
+<p><a href="https://learn.microsoft.com/zh-cn/windows/desktop/Memory/memory-management-functions" data-linktype="absolute-path">内存管理函数</a></p>
+<p><a href="https://learn.microsoft.com/zh-cn/previous-versions/windows/desktop/legacy/aa965225(v=vs.85)" data-linktype="absolute-path">内存性能信息</a></p>
+<p><a href="https://learn.microsoft.com/zh-cn/windows/desktop/Memory/virtual-address-space-and-physical-storage" data-linktype="absolute-path">虚拟地址空间和物理存储</a></p>
+</div><div id="ms--inline-notifications" class="margin-block-xs" data-bi-name="inline-notification"></div><div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main><!-- recommendations section --><!-- end recommendations section -->
+
+						<!-- feedback section --><section id="site-user-feedback-footer" class="font-size-sm margin-top-md" data-test-id="site-user-feedback-footer" data-bi-name="site-feedback-section">
+	<hr class="hr">
+	<h2 id="feedback" class="title is-3">反馈</h2>
+	<div class="display-flex flex-wrap-wrap align-items-center">
+		<p class="font-weight-semibold margin-xxs margin-left-none">此页面是否有帮助？</p>
+		<div class="buttons">
+			<button class="thumb-rating-button like button button-primary button-sm" data-test-id="footer-rating-yes" data-binary-rating-response="rating-yes" type="button" title="本文非常有用" data-bi-name="button-rating-yes" aria-pressed="false">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-like"></span>
+				</span>
+				<span>是</span>
+			</button>
+			<button class="thumb-rating-button dislike button button-primary button-sm" data-test-id="footer-rating-no" data-binary-rating-response="rating-no" type="button" title="本文没有用" data-bi-name="button-rating-no" aria-pressed="false">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-dislike"></span>
+				</span>
+				<span>否</span>
+			</button>
+		</div>
+	</div><div class="display-flex flex-wrap-wrap margin-top-xxs"><div>
+			<a data-bi-name="provide-feedback-cta" class="has-external-link-indicator" href="https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb">
+				<span>提供产品反馈</span>
+			</a><span class="margin-inline-xxs" aria-hidden="true">|</span></div><a href="https://learn.microsoft.com/answers/tags/224/windows-api-win32/" class="has-external-link-indicator" data-bi-name="get-help-at-qna">
+			<span>在 Microsoft Q&amp;A 获取帮助</span>
+		</a></div>
+
+</section><!-- end feedback section -->
+
+						<!-- feedback report section --><!-- end feedback report section --><aside id="ms--additional-resources-mobile" aria-label="其他资源" class="display-none-desktop display-none-print">
+								<hr class="hr" hidden="">
+								<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden="">其他资源</h2>
+								<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" hidden=""></section>
+								<section id="right-rail-training-mobile" data-bi-name="learning-resources-card" hidden=""></section>
+								<section id="right-rail-events-mobile" data-bi-name="events-card" hidden=""></section>
+								<section id="right-rail-qna-mobile" data-bi-name="qna-link-card" hidden=""></section>
+							</aside><div class="border-top is-visible-interactive has-default-focus margin-top-sm "><footer id="footer-interactive" data-bi-name="footer" class="footer-layout"><div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop"><a data-mscc-ic="false" class="locale-selector-link button button-sm button-clear flex-shrink-0" href="https://learn.microsoft.com/zh-cn/locale?target=https%3A%2F%2Flearn.microsoft.com%2Fzh-cn%2Fwindows%2Fwin32%2Fapi%2Fsysinfoapi%2Fnf-sysinfoapi-globalmemorystatusex" data-bi-name="select-locale" aria-label="内容语言选择器。 当前设置为 中文 (简体)。">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">中文 (简体)</span></a><div class="ccpa-privacy-link" data-ccpa-privacy-link="">
+<a href="https://aka.ms/yourcaliforniaprivacychoices" class="button button-sm button-clear flex-shrink-0" data-mscc-ic="false" data-bi-name="your-privacy-choices">
+	<svg role="img" aria-label="加州消费者隐私法案 (CCPA) 禁用图标" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" xml:space="preserve" height="16" width="43" focusable="false">
+		<title>加州消费者隐私法案 (CCPA) 禁用图标</title>
+		<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+		<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+		<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+		<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+	</svg>
+	<span>你的隐私选择</span>
+</a>
+
+		</div>
+		<div class="flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>亮</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>暗</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>高对比度</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder"><button data-bi-name="manageCookies">管理 Cookie</button></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/" data-bi-name="trademarks">商标</a></li><li>© Microsoft 2024</li>
+	</ul>
+</footer></div></div><div id="ms--additional-resources" class="right-container column is-4-desktop display-none display-block-desktop" data-bi-name="pageactions" role="complementary" aria-label="其他资源">
+							<div id="affixed-right-container" class="margin-top-sm-tablet position-sticky" data-bi-name="right-column" style="top: 36px; bottom: 36px;">
+								<h2 id="ms--additional-resources-heading" class="title is-6 margin-top-md" hidden="">其他资源</h2>
+								<section id="right-rail-events" data-bi-name="events-card" hidden=""></section>
+								<section id="right-rail-training" data-bi-name="learning-resources-card" hidden=""></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" hidden=""></section>
+								<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" aria-label="本文内容">
+									<h3>本文内容</h3>
+								</nav>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden=""></section>
+							</div>
+						</div></div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm "><footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo"><div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop"><a data-mscc-ic="false" class="locale-selector-link button button-sm button-clear flex-shrink-0" href="https://learn.microsoft.com/zh-cn/locale?target=https%3A%2F%2Flearn.microsoft.com%2Fzh-cn%2Fwindows%2Fwin32%2Fapi%2Fsysinfoapi%2Fnf-sysinfoapi-globalmemorystatusex" data-bi-name="select-locale" aria-label="内容语言选择器。 当前设置为 中文 (简体)。">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">中文 (简体)</span></a><div class="ccpa-privacy-link" data-ccpa-privacy-link="">
+<a href="https://aka.ms/yourcaliforniaprivacychoices" class="button button-sm button-clear flex-shrink-0" data-mscc-ic="false" data-bi-name="your-privacy-choices">
+	<svg role="img" aria-label="加州消费者隐私法案 (CCPA) 禁用图标" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" xml:space="preserve" height="16" width="43" focusable="false">
+		<title>加州消费者隐私法案 (CCPA) 禁用图标</title>
+		<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+		<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+		<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+		<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+	</svg>
+	<span>你的隐私选择</span>
+</a>
+
+		</div>
+		<div class="flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>亮</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>暗</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>高对比度</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder"><button data-bi-name="manageCookies">管理 Cookie</button></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/" data-bi-name="trademarks">商标</a></li><li>© Microsoft 2024</li>
+	</ul>
+</footer>
+
+	</section>
+
+	<div id="action-panel" role="region" aria-label="操作面板" class="action-panel has-default-focus" tabindex="-1"></div>
+
+                                                                            
+</body><div style="all: initial;"><div id="__xz-jsfy__" class="notranslate" style="all: initial;"></div></div><div class="__evabot_ai_shadow__root" id="__evabot_ai_shadow__root"></div></html>
+<html>                                                                                                        </html> 
+<html>                                                                                                        </html> 
+<html>                                                                                                        </html> 
+<html>                                                                                                        </html> 
+<html>                                                                                                        </html> 
