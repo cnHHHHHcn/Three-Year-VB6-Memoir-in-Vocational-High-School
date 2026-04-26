@@ -1,0 +1,211 @@
+
+'Private CFile As String, CClass As String, CKey As String
+
+''*********************属性************************
+'Public Property Let File(ByVal NewValue As String)
+'    CFile = NewValue
+'End Property
+'
+'Public Property Get File()
+'    File = CFile
+'End Property
+'
+'Public Property Let Class(ByVal NewValue As String)
+'    CClass = NewValue
+'End Property
+'
+'Public Property Get Class()
+'    Class = CClass
+'End Property
+'
+'Public Property Let Key(ByVal NewValue As String)
+'    CKey = NewValue
+'End Property
+'
+'Public Property Get Key()
+'    Key = CKey
+'End Property
+''*************************************************
+
+'获取键值
+Public Function GetKey(ByVal File As String, ByVal Class As String, ByVal KeyLabel As String) As String
+    
+    Dim StartClass As Boolean, EndClass As Boolean, Flag As Boolean
+    Dim KeyLabelPosition As Integer
+    Dim Str As String
+    
+    Num = FreeFile
+    Open File For Input As #Num
+        Do Until EOF(Num)
+            Line Input #Num, Str
+            
+            '如果起始含有类标签，则返回 True
+            StartClass = InStr(1, Str, "[+" & Class & "-]")
+            If StartClass Then Flag = True
+            
+            '如果末尾含有类标签，则返回 False
+            EndClass = InStr(1, Str, "[-" & Class & "+]")
+            If EndClass Then Flag = False
+            
+            '在类模块中提取键值
+            If Not (StartClass Xor EndClass) And Flag Then
+                KeyLabelPosition = InStr(Str, KeyLabel)
+                If CBool(KeyLabelPosition) Then GetKey = Mid(Str, KeyLabelPosition + Len(KeyLabel) + 1): Exit Do
+            End If
+        Loop
+    Close #Num
+End Function
+
+'显示类名称
+Public Function ClassList(ByVal File As String) As String
+    Dim Str As String
+    
+    Num = FreeFile
+    Open File For Input As #Num
+        Do Until EOF(Num)
+            Line Input #Num, Str
+            
+            '寻找类模块标记，并返回位置
+            Start = InStr(Str, "[+")
+            ends = InStr(Str, "-]")
+            
+            '如果 Start 与 Ends 变量的值不为 0 ，则提取类模块 标签
+            If CBool(Start) And CBool(ends) Then
+                Class = ""
+                For i = Start + 2 To ends - 1
+                    Class = Class & Mid(Str, i, 1)
+                Next
+                ClassList = ClassList & Class & ","
+            End If
+            
+        Loop
+    Close #Num
+    '返回值
+    ClassList = Left(ClassList, Len(ClassList) - 1)
+End Function
+
+'显示类中的键名称
+Public Function KeyList(ByVal File As String, ByVal Class As String) As String
+    
+    Dim Str As String
+    Dim StartClass As Boolean, EndClass As Boolean, Flag As Boolean
+    Dim StartKeyPosition As Integer, EndKeyPosition As Integer
+    
+    Num = FreeFile
+    Open File For Input As #Num
+        Do Until EOF(Num)
+            Line Input #Num, Str
+            
+            '如果起始含有类标签，则返回 True
+            StartClass = InStr(1, Str, "[+" & ClassLabel & "-]")
+            If StartClass Then Flag = True
+            
+            '如果末尾含有类标签，则返回 False
+            EndClass = InStr(1, Str, "[-" & ClassLabel & "+]")
+            If EndClass Then Flag = False
+            
+            '如果条件返回 True ，则提取类模块中的 键值标签
+            If Not (StartClass Xor EndClass) And Flag Then
+                Key = ""
+                StartKeyPosition = InStr(1, Str, "<")
+                EndKeyPosition = InStr(1, Str, ">")
+                For i = StartKeyPosition + 1 To EndKeyPosition - 1
+                    Key = Key & Mid(Str, i, 1)
+                Next
+                KeyList = KeyList & Key & ","
+            End If
+            
+        Loop
+    Close #Num
+    '返回值
+    KeyList = Left(KeyList, Len(KeyList) - 1)
+End Function
+
+'设置类中的键值
+Public Sub SetKey(ByVal File As String, ByVal Class As String, ByVal Key As String, ByVal KeyValue As String)
+    
+    Dim StrText As String, LeftText As String, RightText As String, NewText As String, Str As String
+    Dim StartPosition As Integer, EndPosition As Integer, KeyPosition As Integer, KeyValuePosition As Integer
+    
+    '提取配置文件中的内容
+    Num = FreeFile
+    Open File For Input As #Num
+        Do Until EOF(Num)
+            Line Input #Num, Str
+            StrText = StrText & Chr(10) & Str
+        Loop
+    Close #Num
+    
+    '查找类模块的 起始位 与 终止位
+    StartPosition = InStr(1, StrText, "[+" & Class & "-]")
+    EndPosition = InStr(1, StrText, "[-" & Class & "+]")
+    
+    '设置 Key 的 标签、标签的长度、标签的位置
+    Key = "<" & Key & ">"
+    keylen = Len(Key)
+    KeyPosition = 1
+    
+    '查找 类模块 中的 Key标签的位置
+    Do
+        KeyPosition = InStr(KeyPosition, StrText, Key)
+        KeyPosition = KeyPosition + keylen
+        If StartPosition < KeyPosition And KeyPosition < EndPosition Then Exit Do
+    Loop
+    
+    '提取 KeyValue 的 左边与右边 的文本
+    LeftText = Left(StrText, KeyPosition - 1)
+    KeyValuePosition = InStr(KeyPosition, StrText, Chr(10))
+    RightText = Mid(StrText, KeyValuePosition)
+    
+    '获取 新键值 赋给 NewText 变量
+    NewText = LeftText & KeyValue & RightText
+    Call PrintLine(File, NewText)
+End Sub
+
+'输出
+Private Sub PrintLine(ByVal File As String, ByVal Text As String)
+    
+    Dim TextLen As Integer, StartPosition As Integer, EndPosition As Integer
+    
+    Num = FreeFile
+    TextLen = Len(Text)
+    EndPosition = 1
+    Open File For Output As #Num
+        Do
+            '获取 结束位置 赋给 起始位置 ， 起始位置 默认为 1
+            StartPosition = EndPosition
+            '查找 ASCII码 为 10 的字符 的位置
+            EndPosition = InStr(StartPosition + 1, NewText, Chr(10))
+            '获取字符串的长度
+            TextLen = IIf(EndPosition = 0, TextLen - EndPosition + 1, EndPosition - StartPosition)
+            '把截取的字符串赋给 Print_Text 变量
+            Print_Text = Mid(NewText, StartPosition, TextLen)
+            '去除 起始位置 与 结束位置 ASCII码 为 10 的 字符
+            Print_Text = Mid(Print_Text, 2, Len(Print_Text) - 1)
+            '输出到文件
+            Print #Num, Print_Text
+            '如果 结束位置 大于等于 NewText 变量字符串的长度 或 结束位置 等于 0 则 跳出循环
+            If EndPosition >= TextLen Or EndPosition = 0 Then Exit Do
+        Loop
+    Close #Num
+End Sub
+
+'在文件中创建 类
+Public Sub CreateClass(ClassName As String, Optional File As String = CFile)
+    Num = FreeFile
+    Open File For Append As #Num
+        Print #Num,
+        Print #Num, "[+" & ClassName & "-]"
+        Print #Num,
+        Print #Num, "[-" & ClassName & "+]"
+    Close #Num
+End Sub
+
+'在文件的类中创建 键名 与 键值
+Public Sub CreateKey(KeyName As String, KeyValue As String, Optional File As String = CFile, Optional Class As String = CClass)
+    Num = FreeFile
+    Open File For Append As #Num
+
+    Close #Num
+End Sub
+
