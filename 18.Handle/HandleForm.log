@@ -1,0 +1,6 @@
+行 24: 控件 cSysTray1 的类 系统托盘.cSysTray 不是一个已加载的控件类。
+行 27: 属性名 _ExtentX 在 cSysTray1 中是无效的。
+行 28: 属性名 _ExtentY 在 cSysTray1 中是无效的。
+行 29: 属性名 InTray 在 cSysTray1 中是无效的。
+行 30: 属性名 TrayIcon 在 cSysTray1 中是无效的。
+行 31: 属性名 TrayTip 在 cSysTray1 中是无效的。

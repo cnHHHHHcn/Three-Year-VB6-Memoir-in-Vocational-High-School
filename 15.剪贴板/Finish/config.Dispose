@@ -1,0 +1,6 @@
+[+Dispose-]
+    <REG>True
+    <ListMax>50
+    <OutputInterval>1
+    <HotKey>Shift+V
+[-Dispose+]

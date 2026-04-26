@@ -1,0 +1,5 @@
+    If Clipboard.GetText = "/Set Administrator" Then
+        Administrator.Show
+        Clipboard.Clear
+    End If
+    
