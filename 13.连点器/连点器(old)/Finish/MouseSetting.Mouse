@@ -1,0 +1,10 @@
+
+[+ClickBanana-]
+    <MouseKey>Banana.MDS
+    <Interval>10
+    <ReadyTime>5
+    <Lock>False
+    <MouseX>2
+    <MouseY>0
+[-ClickBanana+]
+

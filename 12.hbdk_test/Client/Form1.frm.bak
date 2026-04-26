@@ -1,0 +1,294 @@
+VERSION 5.00
+Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "mswinsck.ocx"
+Begin VB.Form Form1 
+   Caption         =   "Form1"
+   ClientHeight    =   4635
+   ClientLeft      =   120
+   ClientTop       =   450
+   ClientWidth     =   8100
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   4635
+   ScaleWidth      =   8100
+   StartUpPosition =   3  '窗口缺省
+   Begin VB.Frame Get_And_Put 
+      Caption         =   "获取与申请"
+      Enabled         =   0   'False
+      Height          =   975
+      Left            =   240
+      TabIndex        =   12
+      Top             =   1320
+      Width           =   3495
+      Begin VB.CommandButton GetU_P 
+         Caption         =   "获取"
+         Height          =   495
+         Left            =   120
+         TabIndex        =   15
+         Top             =   240
+         Width           =   735
+      End
+      Begin VB.CommandButton Request 
+         Caption         =   "申请"
+         Height          =   495
+         Left            =   2640
+         TabIndex        =   14
+         Top             =   240
+         Width           =   735
+      End
+      Begin VB.TextBox Request_Text 
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "宋体"
+            Size            =   15.75
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   435
+         Left            =   960
+         TabIndex        =   13
+         Top             =   240
+         Width           =   1575
+      End
+   End
+   Begin VB.CommandButton Command1 
+      Caption         =   "Command1"
+      Height          =   495
+      Left            =   5160
+      TabIndex        =   9
+      Top             =   1680
+      Width           =   1215
+   End
+   Begin VB.TextBox Copy_Text 
+      Height          =   495
+      Left            =   5040
+      TabIndex        =   8
+      Top             =   1680
+      Width           =   1215
+   End
+   Begin VB.CommandButton Port_Report 
+      Caption         =   "端口检测报告"
+      Height          =   495
+      Left            =   240
+      TabIndex        =   5
+      Top             =   3360
+      Width           =   1455
+   End
+   Begin VB.TextBox Return_Text 
+      Height          =   1095
+      Left            =   240
+      TabIndex        =   4
+      Text            =   "Text2"
+      Top             =   120
+      Width           =   3495
+   End
+   Begin VB.Frame Send 
+      Caption         =   "发送"
+      Enabled         =   0   'False
+      Height          =   855
+      Left            =   240
+      TabIndex        =   0
+      Top             =   2400
+      Width           =   3495
+      Begin VB.TextBox Text 
+         BeginProperty Font 
+            Name            =   "宋体"
+            Size            =   15.75
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   435
+         Left            =   960
+         TabIndex        =   2
+         Top             =   300
+         Width           =   1575
+      End
+      Begin VB.CommandButton Send_text 
+         Caption         =   "发送"
+         Height          =   495
+         Left            =   2640
+         TabIndex        =   1
+         Top             =   240
+         Width           =   615
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "姓名："
+         BeginProperty Font 
+            Name            =   "宋体"
+            Size            =   15.75
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   120
+         TabIndex        =   3
+         Top             =   360
+         Width           =   945
+      End
+   End
+   Begin VB.Timer StateCheck 
+      Interval        =   3000
+      Left            =   3840
+      Top             =   0
+   End
+   Begin MSWinsockLib.Winsock Client 
+      Left            =   4320
+      Top             =   0
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   393216
+   End
+   Begin VB.Label Number 
+      Height          =   1095
+      Left            =   5880
+      TabIndex        =   11
+      Top             =   3000
+      Width           =   1455
+   End
+   Begin VB.Label ServerState 
+      AutoSize        =   -1  'True
+      Caption         =   "服务器状态：None"
+      Height          =   180
+      Left            =   240
+      TabIndex        =   10
+      Top             =   4200
+      Width           =   1440
+   End
+   Begin VB.Label ServerIP 
+      AutoSize        =   -1  'True
+      Caption         =   "<IP>"
+      Height          =   180
+      Left            =   1080
+      TabIndex        =   7
+      Top             =   3960
+      Width           =   360
+   End
+   Begin VB.Label CopyIP 
+      AutoSize        =   -1  'True
+      Caption         =   "服务器IP："
+      Height          =   180
+      Left            =   240
+      TabIndex        =   6
+      ToolTipText     =   "点击复制服务器IP"
+      Top             =   3960
+      Width           =   900
+   End
+End
+Attribute VB_Name = "Form1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim Port As Integer
+Dim UserHost As String, ServerHost As String, strData As String
+
+Private Sub Command1_Click()
+MsgBox OperaKey.ClassList(App.Path & "\配置.csini")
+End Sub
+
+Private Sub CopyIP_Click()
+Set a = CreateObject("wscript.shell")
+Copy_Text.Text = ServerIP.Caption
+Copy_Text.SetFocus
+Copy_Text.SelLength = Len(Copy_Text.Text)
+a.SendKeys "^c"
+End Sub
+
+Private Sub Form_Activate()
+Copy_Text.Top = -1000
+Copy_Text.Left = -1000
+UserHost = Public_Code.GetHostName
+Client.RemoteHost = UserHost
+Client.LocalPort = 1010
+Client.RemotePort = 1011
+Client_Code.ReBoot Client, "None", 1011
+
+ServerHost = OperaKey.GetKey(App.Path & "\配置.csini", "Server", "Name")
+ServerIP.Caption = OperaKey.GetKey(App.Path & "\配置.csini", "Server", "IP")
+End Sub
+
+Private Sub Form_Load()
+Shell ("cmd.exe /c hostname > " & App.Path & "\Name.txt")
+Open App.Path & "\配置.csini" For Input As #1
+    Do Until EOF(1)
+        Line Input #1, StrText
+        Position = InStr(1, StrText, ">")
+        If Position <> 0 Then ServerHost = Right(StrText, Len(StrText) - Position)
+    Loop
+Close
+End Sub
+
+Private Sub Port_Report_Click()
+MsgBox Public_Code.RePort(Client, False, True, 1)
+End Sub
+
+Private Sub Request_Click()
+strData = "<Request>  " & UserHost & "申请查看其它电脑的河北对口账户"
+If Client.State = 7 Then Client.SendData strData
+End Sub
+
+Private Sub StateCheck_Timer()
+If Not (1010 < Port And Port < 1035) Then Port = 1010
+If Not (Client.State = 7 Or Client.State = 2) Then Port = Port + 1: ServerState.Caption = "服务器状态：None": Client_Code.ReBoot Client, ServerHost, Port
+End Sub
+
+Private Sub Client_Connect()
+Client.SendData "<State>"
+End Sub
+
+Private Sub Client_DataArrival(ByVal bytesTotal As Long)
+Dim strData As String
+Client.GetData strData
+strData = Trim(strData)
+
+Position = InStr(1, strData, ":")
+Label = Left(strData, Position - 1)
+Select Case Label
+Case "State"
+    State = Mid(strData, Position + 1)
+    ServerState.Caption = "服务器状态：" & State
+    If State = "侦听中……" Then
+        Get_And_Put.Enabled = True
+        Send.Enabled = False
+    ElseIf State = "接收中……" Then
+        Get_And_Put.Enabled = False
+        Send.Enabled = True
+    End If
+    GoTo ends
+Case "Return"
+    ReturnStr = Mid(strData, Position + 1)
+    Request_Text.Enabled = CBool(Val(Left(ReturnStr, 1)))
+    Number.Caption = Mid(ReturnStr, 8)
+    GoTo ends
+case "Close"
+    Client.Close
+    ServerState.Caption = "服务器状态：None" 
+    GoTo ends
+End Select
+
+Return_Text.Text = strData
+ends:
+End Sub
+
+Private Sub GetU_P_Click()
+strData = "<Get>" & Request_Text.Text
+If Request_Text.Enabled Then
+    If Client.State = 7 Then Client.SendData strData
+Else
+    If Client.State = 7 Then Client.SendData "<Get>" & UserHost
+End If
+End Sub
+
+Private Sub Send_text_Click()
+strData = "<Put>" & UserHost & "    " & Text.Text
+If Client.State = 7 Then Client.SendData strData
+End Sub
+

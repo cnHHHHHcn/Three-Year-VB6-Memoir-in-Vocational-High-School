@@ -1,0 +1,35 @@
+[+left-]
+    <MouseKey>LeftClick
+    <Interval>10
+    <ReadyTime>5
+    <Lock>False
+    <MouseX>50
+    <MouseY>100
+[-left+]
+
+[+Right-]
+    <MouseKey>RightClick
+    <Interval>10
+    <ReadyTime>5
+    <Lock>False
+    <MouseX>50
+    <MouseY>100
+[-Right+]
+
+[+mouselocktest-]
+    <MouseKey>LeftClick
+    <Interval>100
+    <ReadyTime>1
+    <Lock>True
+    <MouseX>100
+    <MouseY>560
+[-mouselocktest+]
+
+[+KillSkeleton-]
+    <MouseKey>LeftClick
+    <Interval>1500
+    <ReadyTime>5
+    <Lock>False
+    <MouseX>720
+    <MouseY>441
+[-KillSkeleton+]

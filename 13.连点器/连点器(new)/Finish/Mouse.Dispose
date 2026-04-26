@@ -1,0 +1,19 @@
+[+Mouse-]
+    <Boot>U
+    <Pause>I
+    <Transcribe>O
+    <TranscribePause>P
+[-Mouse+]
+
+[+MouseTranscribe-]
+    <LeftClick>左键点击
+    <LeftDown>左键按下
+    <LeftUp>左键弹起
+    <RightClick>右键点击
+    <RightDown>右键按下
+    <RightUp>右键弹起
+    <MiddleClick>滚轮键点击
+    <MiddleDown>滚轮键按下
+    <MiddleUp>滚轮键弹起
+    <KillSkeleton(1440-900).MDS>处死凋零骷髅
+[-MouseTranscribe+]

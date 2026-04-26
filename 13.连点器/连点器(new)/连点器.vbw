@@ -1,0 +1,6 @@
+MouseClick = 52, 52, 1006, 597, C, 26, 26, 980, 587, C
+Hook = 52, 52, 1006, 515, 
+PublicMethod = 104, 104, 1132, 567, C
+MouseButton = 32, 29, 1060, 673, 
+OperateKey = 51, 30, 1079, 493, 
+ScreenExchange = 69, 73, 1049, 491, C, 78, 78, 619, 531, C

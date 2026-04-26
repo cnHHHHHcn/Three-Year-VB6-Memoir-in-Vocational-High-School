@@ -1,0 +1,18 @@
+[+Mouse-]
+    <Boot>u
+    <Pause>i
+    <Transcribe>o
+    <TranscribePause>p
+[-Mouse+]
+
+[+MouseTranscribe-]
+    <×ó¼üµã»÷>LeftClick
+    <×ó¼ü°´ÏÂ>LeftDown
+    <×ó¼üµ¯Æð>LeftUp
+    <ÓÒ¼üµã»÷>RightClick
+    <ÓÒ¼ü°´ÏÂ>RightDown
+    <ÓÒ¼üµ¯Æð>RightUp
+    <¹öÂÖ¼üµã»÷>MiddleClick
+    <¹öÂÖ¼ü°´ÏÂ>MiddleDown
+    <¹öÂÖ¼üµ¯Æð>MiddleUp
+[-MouseTranscribe+]

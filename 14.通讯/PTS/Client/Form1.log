@@ -1,0 +1,4 @@
+行 224: 控件 Client 的类 MSWinsockLib.Winsock 不是一个已加载的控件类。
+行 227: 属性名 _ExtentX 在 Client 中是无效的。
+行 228: 属性名 _ExtentY 在 Client 中是无效的。
+行 229: 属性名 _Version 在 Client 中是无效的。
